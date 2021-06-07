@@ -5,12 +5,13 @@ date: 2021-06-03 18:24:23 +0100
 author: João Sobral
 ---
 
-<ul>
-<li>BATATA</li>
-<li>CEBOLAS</li>
-<li>COUVES</li>
-<li>ALHOS</li>
-<li>TOMATES</li>
+<h3> Ingredients </h3>
+<ul class="list" style="list-style:inside">
+    <li>Potatoes</li>
+    <li>Onions</li>
+    <li>Cabbages</li>
+    <li>Gralic</li>
+    <li>Tomatoes</li>
 </ul>
 
 some content

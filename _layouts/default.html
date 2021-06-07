@@ -1,34 +1,13 @@
 <html lang="{{ page.lang | default: site.lang | default:"en" }}">
-    {%- include head.html -%}
+    {% include head.html %}
     <body>
-        {%- include header.html color="black" -%}
-            {% comment %} {%- if layout == 'post' and layout == 'page' and layout == 'default'-%} {% endif %}{% endcomment %}
-                <div class="sidenav">
-                    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-                    <ul class="list-unstyled">
-                        {% for post in paginator.posts %}
-                            <li class="list-item">
-                                <div class="row">
-                                    <span class="post-meta" style="color: white">{{ post.date | date: date_format }}</span>
-                                    <a class="post-link" href="{{ post.url | relative_url }}">
-                                    {{ post.title | escape }}</a>
-                                    {% if post.author %}
-                                        <p style="color:white;">
-                                            <i>posted by:<i>  {{ post.author | escape }}
-                                        </p>
-                                    {% endif %}
-                                </div>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            {% comment %}  {% endcomment %}
+        {% include header.html color="black" %}
         <main class="page-content" aria-label="Content">
             <div class="wrapper">
                 {{ content }}
             </div>
         </main>
         <!-- <script type="module" src="../assets/fetch_posts.js"></script> -->
-        {%- include footer.html -%}
+        {% include footer.html %}
     </body>
 </html>
