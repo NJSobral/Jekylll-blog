@@ -28,14 +28,14 @@ body {
 
 .sidenav {
   height: 100%;
-  width: 300px;
+  width: 350px;
   position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
   background-color: #111;
   overflow-x: hidden;
-  padding-top: 100px;
+  padding: 100px 0 35px 35px;
   box-sizing: border-box;
 
 }
@@ -87,7 +87,7 @@ body {
 header.masthead {
   text-align: center;
   color: white;
-  background-image: url("../img/gettyimages-636555416-612x612.jpg");
+  /* background-image: url("../img/gettyimages-636555416-612x612.jpgk"); */
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;

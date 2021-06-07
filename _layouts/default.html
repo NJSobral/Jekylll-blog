@@ -2,16 +2,11 @@
     {%- include head.html -%}
     <body>
         {%- include header.html color="black" -%}
-        {%- assign default_paths = site.pages | map: "path" -%} 
-        {%- assign page_paths = site.header_pages | default: default_paths -%} 
-        {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
-        {%- for path in page_paths -%}
-        {%- assign my_page = site.pages | where: "path", path | first -%} 
-            {%- if my_page.title and my_page.layout != "home" -%}
+            {% comment %} {%- if layout == 'post' and layout == 'page' and layout == 'default'-%} {% endif %}{% endcomment %}
                 <div class="sidenav">
                     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
                     <ul class="list-unstyled">
-                        {% for post in posts %}
+                        {% for post in paginator.posts %}
                             <li class="list-item">
                                 <div class="row">
                                     <span class="post-meta" style="color: white">{{ post.date | date: date_format }}</span>
@@ -23,10 +18,11 @@
                                         </p>
                                     {% endif %}
                                 </div>
-                    {% endfor %}
+                            </li>
+                        {% endfor %}
+                    </ul>
                 </div>
-            {% endif %}
-        {%- endfor -%}
+            {% comment %}  {% endcomment %}
         <main class="page-content" aria-label="Content">
             <div class="wrapper">
                 {{ content }}
