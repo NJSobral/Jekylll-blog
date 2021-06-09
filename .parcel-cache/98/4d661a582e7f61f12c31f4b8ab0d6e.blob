@@ -1,0 +1,5 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _vuex = require("vuex");
+var _vuexDefault = parcelHelpers.interopDefault(_vuex);
+exports.default = store;

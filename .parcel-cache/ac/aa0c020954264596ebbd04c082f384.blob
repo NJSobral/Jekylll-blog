@@ -1,0 +1,26 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+const state1 = ()=>{
+};
+const mutations = {
+    showbasket (state) {
+        if (state.toggle === false) state.toggle = true;
+        else state.toggle = false;
+    }
+};
+const actions = {
+    active ({ commit  }) {
+        commit('showbasket');
+    }
+};
+const getters = {
+    getToggle: (state2)=>{
+        return state2.count;
+    }
+};
+exports.default = {
+    state: state1,
+    getters,
+    actions,
+    mutations
+};

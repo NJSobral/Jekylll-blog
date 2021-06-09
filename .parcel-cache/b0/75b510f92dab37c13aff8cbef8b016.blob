@@ -1,0 +1,18 @@
+import { createVNode as _createVNode, createCommentVNode as _createCommentVNode, createStaticVNode as _createStaticVNode, openBlock as _openBlock, createBlock as _createBlock, withScopeId as _withScopeId, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from "vue"
+const _withId = /*#__PURE__*/_withScopeId("data-v-1f7cd9")
+
+_pushScopeId("data-v-1f7cd9")
+const _hoisted_1 = /*#__PURE__*/_createStaticVNode("<h1 data-v-1f7cd9>Basket</h1><div id=\"sidebar-wrapper\" data-v-1f7cd9><ul class=\"sidebar-nav\" data-v-1f7cd9><li class=\"sidebar-brand\" data-v-1f7cd9><a href=\"#\" data-v-1f7cd9> Your basket </a></li><li data-v-1f7cd9><a href=\"#\" data-v-1f7cd9>Dashboard</a></li><li data-v-1f7cd9><a href=\"#\" data-v-1f7cd9>Shortcuts</a></li><li data-v-1f7cd9><a href=\"#\" data-v-1f7cd9>Overview</a></li><li data-v-1f7cd9><a href=\"#\" data-v-1f7cd9>Events</a></li><li data-v-1f7cd9><a href=\"#\" data-v-1f7cd9>About</a></li><li data-v-1f7cd9><a href=\"#\" data-v-1f7cd9>Services</a></li><li data-v-1f7cd9><a href=\"#\" data-v-1f7cd9>Contact</a></li></ul></div>", 2)
+_popScopeId()
+
+export const render = /*#__PURE__*/_withId((_ctx, _cache) => {
+  return (_openBlock(), _createBlock("div", null, [
+    _hoisted_1,
+    _createCommentVNode(" /#sidebar-wrapper ")
+  ]))
+})
+if (module.hot) {
+  module.hot.accept(() => {
+    __VUE_HMR_RUNTIME__.rerender('1f7cd9-hmr', render);
+  })
+}

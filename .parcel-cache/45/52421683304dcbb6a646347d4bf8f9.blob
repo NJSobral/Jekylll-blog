@@ -1,0 +1,23 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+let script;
+let initialize = ()=>{
+    script = require('script:./basket.vue');
+    if (script.__esModule) script = script.default;
+    script.render = require('template:./basket.vue').render;
+    script.__cssModules = require('style:./basket.vue').default;
+    require('custom:./basket.vue').default(script);
+    script.__scopeId = 'data-v-1f7cd9';
+    script.__file = "/home/joao/jekyll-projects/git-projects/Jekylll-blog/vue/basket/basket.vue";
+};
+initialize();
+if (module.hot) {
+    script.__hmrId = '1f7cd9-hmr';
+    module.hot.accept(()=>{
+        setTimeout(()=>{
+            initialize();
+            if (!__VUE_HMR_RUNTIME__.createRecord('1f7cd9-hmr', script)) __VUE_HMR_RUNTIME__.reload('1f7cd9-hmr', script);
+        }, 0);
+    });
+}
+exports.default = script;

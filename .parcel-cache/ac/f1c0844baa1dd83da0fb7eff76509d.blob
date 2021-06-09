@@ -1,0 +1,26 @@
+import { createVNode as _createVNode, toDisplayString as _toDisplayString, openBlock as _openBlock, createBlock as _createBlock, withScopeId as _withScopeId, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from "vue"
+const _withId = /*#__PURE__*/_withScopeId("data-v-1f7cd9")
+
+_pushScopeId("data-v-1f7cd9")
+const _hoisted_1 = /*#__PURE__*/_createVNode("h1", null, "Basket", -1 /* HOISTED */)
+const _hoisted_2 = { style: {"color":"black"} }
+const _hoisted_3 = /*#__PURE__*/_createVNode("i", { class: "fa fa-shopping-cart fa-5x icon-grey" }, null, -1 /* HOISTED */)
+const _hoisted_4 = /*#__PURE__*/_createVNode("i", {
+  class: "fa fa-square-o",
+  style: {"color":"#00f"}
+}, null, -1 /* HOISTED */)
+_popScopeId()
+
+export const render = /*#__PURE__*/_withId((_ctx, _cache) => {
+  return (_openBlock(), _createBlock("div", null, [
+    _hoisted_1,
+    _createVNode("h3", _hoisted_2, "Counter is: " + _toDisplayString(_ctx.getInc), 1 /* TEXT */),
+    _hoisted_3,
+    _hoisted_4
+  ]))
+})
+if (module.hot) {
+  module.hot.accept(() => {
+    __VUE_HMR_RUNTIME__.rerender('1f7cd9-hmr', render);
+  })
+}

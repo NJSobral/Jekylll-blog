@@ -1,0 +1,11 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _vue = require("vue");
+var _vueDefault = parcelHelpers.interopDefault(_vue);
+var _vuetify = require("vuetify");
+var _vuetifyDefault = parcelHelpers.interopDefault(_vuetify);
+var _vuetifyMinCss = require("vuetify/dist/vuetify.min.css");
+_vueDefault.default.use(_vuetifyDefault.default);
+const opts = {
+};
+exports.default = new _vuetifyDefault.default(opts);

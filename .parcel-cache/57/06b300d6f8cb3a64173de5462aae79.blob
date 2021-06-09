@@ -1,0 +1,51 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "render", ()=>render
+);
+var _vue = require("vue");
+const _hoisted_1 = {
+    class: "navbar navbar-expand-lg navbar-dark fixed-top"
+};
+const _hoisted_2 = /*#__PURE__*/ _vue.createVNode("a", {
+    class: "navbar-brand",
+    href: "/"
+}, [
+    /*#__PURE__*/ _vue.createVNode("h3", null, [
+        /*#__PURE__*/ _vue.createVNode("b", null, "Battata")
+    ])
+], -1/* HOISTED */ );
+const _hoisted_3 = {
+    class: "collapse navbar-collapse",
+    id: "navbarResponsive"
+};
+const _hoisted_4 = /*#__PURE__*/ _vue.createStaticVNode("<ul class=\"navbar-nav text-center\"><li class=\"nav-item\"><a class=\"nav-link\" href=\"/about/\"><h5>About</h5></a></li><li class=\"nav-item\"><a href=\"/vueshop/\" class=\"nav-link\"><h5>Vue Shop</h5></a></li></ul>", 1);
+const _hoisted_5 = {
+    class: "button button5"
+};
+const _hoisted_6 = /*#__PURE__*/ _vue.createVNode("i", {
+    class: "fa fa-shopping-cart fa-2x icon-grey"
+}, null, -1/* HOISTED */ );
+function render(_ctx, _cache) {
+    const _component_spamn = _vue.resolveComponent("spamn");
+    return _vue.openBlock(), _vue.createBlock("div", null, [
+        _vue.createVNode("nav", _hoisted_1, [
+            _hoisted_2,
+            _vue.createVNode("div", _hoisted_3, [
+                _hoisted_4,
+                _vue.createVNode("button", _hoisted_5, [
+                    _hoisted_6,
+                    _vue.createVNode(_component_spamn, null, {
+                        default: _vue.withCtx(()=>[
+                                _vue.createTextVNode(_vue.toDisplayString(_ctx.getInc), 1/* TEXT */ )
+                            ]
+                        ),
+                        _: 1
+                    })
+                ])
+            ])
+        ])
+    ]);
+}
+if (module.hot) module.hot.accept(()=>{
+    __VUE_HMR_RUNTIME__.rerender('0a3782-hmr', render);
+});

@@ -1,0 +1,15 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getDevtoolsGlobalHook", ()=>getDevtoolsGlobalHook
+);
+parcelHelpers.export(exports, "getTarget", ()=>getTarget
+);
+var global = arguments[3];
+function getDevtoolsGlobalHook() {
+    return getTarget().__VUE_DEVTOOLS_GLOBAL_HOOK__;
+}
+function getTarget() {
+    // @ts-ignore
+    return typeof navigator !== 'undefined' ? window : typeof global !== 'undefined' ? global : {
+    };
+}

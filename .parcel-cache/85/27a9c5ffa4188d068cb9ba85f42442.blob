@@ -1,0 +1,132 @@
+import { createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, withModifiers as _withModifiers, withCtx as _withCtx, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createBlock as _createBlock, toDisplayString as _toDisplayString, withScopeId as _withScopeId, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from "vue"
+const _withId = /*#__PURE__*/_withScopeId("data-v-1f7cd9")
+
+_pushScopeId("data-v-1f7cd9")
+const _hoisted_1 = /*#__PURE__*/_createTextVNode(" Toggle ")
+const _hoisted_2 = /*#__PURE__*/_createTextVNode("John Leider")
+_popScopeId()
+
+export const render = /*#__PURE__*/_withId((_ctx, _cache) => {
+  const _component_v_btn = _resolveComponent("v-btn")
+  const _component_v_row = _resolveComponent("v-row")
+  const _component_v_container = _resolveComponent("v-container")
+  const _component_v_img = _resolveComponent("v-img")
+  const _component_v_list_item_avatar = _resolveComponent("v-list-item-avatar")
+  const _component_v_list_item_title = _resolveComponent("v-list-item-title")
+  const _component_v_list_item_content = _resolveComponent("v-list-item-content")
+  const _component_v_list_item = _resolveComponent("v-list-item")
+  const _component_v_divider = _resolveComponent("v-divider")
+  const _component_v_icon = _resolveComponent("v-icon")
+  const _component_v_list_item_icon = _resolveComponent("v-list-item-icon")
+  const _component_v_list = _resolveComponent("v-list")
+  const _component_v_navigation_drawer = _resolveComponent("v-navigation-drawer")
+  const _component_v_sheet = _resolveComponent("v-sheet")
+
+  return (_openBlock(), _createBlock(_component_v_sheet, {
+    height: "400",
+    class: "overflow-hidden",
+    style: {"position":"relative"}
+  }, {
+    default: _withId(() => [
+      _createVNode(_component_v_container, { class: "fill-height" }, {
+        default: _withId(() => [
+          _createVNode(_component_v_row, {
+            align: "center",
+            justify: "center"
+          }, {
+            default: _withId(() => [
+              _createVNode(_component_v_btn, {
+                color: "pink",
+                dark: "",
+                onClick: _cache[1] || (_cache[1] = _withModifiers($event => (_ctx.drawer = !_ctx.drawer), ["stop"]))
+              }, {
+                default: _withId(() => [
+                  _hoisted_1
+                ]),
+                _: 1 /* STABLE */
+              })
+            ]),
+            _: 1 /* STABLE */
+          })
+        ]),
+        _: 1 /* STABLE */
+      }),
+      _createVNode(_component_v_navigation_drawer, {
+        modelValue: _ctx.drawer,
+        "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => (_ctx.drawer = $event)),
+        absolute: "",
+        temporary: ""
+      }, {
+        default: _withId(() => [
+          _createVNode(_component_v_list_item, null, {
+            default: _withId(() => [
+              _createVNode(_component_v_list_item_avatar, null, {
+                default: _withId(() => [
+                  _createVNode(_component_v_img, { src: "https://randomuser.me/api/portraits/men/78.jpg" })
+                ]),
+                _: 1 /* STABLE */
+              }),
+              _createVNode(_component_v_list_item_content, null, {
+                default: _withId(() => [
+                  _createVNode(_component_v_list_item_title, null, {
+                    default: _withId(() => [
+                      _hoisted_2
+                    ]),
+                    _: 1 /* STABLE */
+                  })
+                ]),
+                _: 1 /* STABLE */
+              })
+            ]),
+            _: 1 /* STABLE */
+          }),
+          _createVNode(_component_v_divider),
+          _createVNode(_component_v_list, { dense: "" }, {
+            default: _withId(() => [
+              (_openBlock(true), _createBlock(_Fragment, null, _renderList(_ctx.items, (item) => {
+                return (_openBlock(), _createBlock(_component_v_list_item, {
+                  key: item.title,
+                  link: ""
+                }, {
+                  default: _withId(() => [
+                    _createVNode(_component_v_list_item_icon, null, {
+                      default: _withId(() => [
+                        _createVNode(_component_v_icon, null, {
+                          default: _withId(() => [
+                            _createTextVNode(_toDisplayString(item.icon), 1 /* TEXT */)
+                          ]),
+                          _: 2 /* DYNAMIC */
+                        }, 1024 /* DYNAMIC_SLOTS */)
+                      ]),
+                      _: 2 /* DYNAMIC */
+                    }, 1024 /* DYNAMIC_SLOTS */),
+                    _createVNode(_component_v_list_item_content, null, {
+                      default: _withId(() => [
+                        _createVNode(_component_v_list_item_title, null, {
+                          default: _withId(() => [
+                            _createTextVNode(_toDisplayString(item.title), 1 /* TEXT */)
+                          ]),
+                          _: 2 /* DYNAMIC */
+                        }, 1024 /* DYNAMIC_SLOTS */)
+                      ]),
+                      _: 2 /* DYNAMIC */
+                    }, 1024 /* DYNAMIC_SLOTS */)
+                  ]),
+                  _: 2 /* DYNAMIC */
+                }, 1024 /* DYNAMIC_SLOTS */))
+              }), 128 /* KEYED_FRAGMENT */))
+            ]),
+            _: 1 /* STABLE */
+          })
+        ]),
+        _: 1 /* STABLE */
+      }, 8 /* PROPS */, ["modelValue"])
+    ]),
+    _: 1 /* STABLE */
+  }))
+})
+if (module.hot) {
+  module.hot.accept(() => {
+    __VUE_HMR_RUNTIME__.rerender('1f7cd9-hmr', render);
+  })
+}

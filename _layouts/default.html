@@ -1,13 +1,13 @@
 <html lang="{{ page.lang | default: site.lang | default:"en" }}">
     {% include head.html %}
     <body>
-        {% include header.html color="black" %}
+        {% include navbar.html %}
         <main class="page-content" aria-label="Content">
             <div class="wrapper">
                 {{ content }}
             </div>
         </main>
-        <!-- <script type="module" src="../assets/fetch_posts.js"></script> -->
+
         {% include footer.html %}
         <script>
             if (window.netlifyIdentity) {

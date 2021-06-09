@@ -1,0 +1,23 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+let script;
+let initialize = ()=>{
+    script = require('script:./navbar.vue');
+    if (script.__esModule) script = script.default;
+    script.render = require('template:./navbar.vue').render;
+    script.__cssModules = require('style:./navbar.vue').default;
+    require('custom:./navbar.vue').default(script);
+    script.__scopeId = 'data-v-0a3782';
+    script.__file = "/home/joao/jekyll-projects/git-projects/Jekylll-blog/vue/navbar/navbar.vue";
+};
+initialize();
+if (module.hot) {
+    script.__hmrId = '0a3782-hmr';
+    module.hot.accept(()=>{
+        setTimeout(()=>{
+            initialize();
+            if (!__VUE_HMR_RUNTIME__.createRecord('0a3782-hmr', script)) __VUE_HMR_RUNTIME__.reload('0a3782-hmr', script);
+        }, 0);
+    });
+}
+exports.default = script;

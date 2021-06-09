@@ -1,0 +1,27 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "render", ()=>render
+);
+var _vue = require("vue");
+const _withId = /*#__PURE__*/ _vue.withScopeId("data-v-1f7cd9");
+_vue.pushScopeId("data-v-1f7cd9");
+const _hoisted_1 = /*#__PURE__*/ _vue.createVNode("h1", null, "Basket", -1/* HOISTED */ );
+const _hoisted_2 = {
+    style: {
+        "color": "black"
+    }
+};
+const _hoisted_3 = /*#__PURE__*/ _vue.createVNode("i", {
+    class: "fa fa-shopping-cart fa-5x icon-grey"
+}, null, -1/* HOISTED */ );
+_vue.popScopeId();
+const render = /*#__PURE__*/ _withId((_ctx, _cache)=>{
+    return _vue.openBlock(), _vue.createBlock("div", null, [
+        _hoisted_1,
+        _vue.createVNode("h3", _hoisted_2, "Counter is: " + _vue.toDisplayString(_ctx.getInc), 1/* TEXT */ ),
+        _hoisted_3
+    ]);
+});
+if (module.hot) module.hot.accept(()=>{
+    __VUE_HMR_RUNTIME__.rerender('1f7cd9-hmr', render);
+});

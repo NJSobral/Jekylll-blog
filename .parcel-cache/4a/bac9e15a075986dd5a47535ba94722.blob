@@ -1,0 +1,38 @@
+import { createVNode as _createVNode, toDisplayString as _toDisplayString, createStaticVNode as _createStaticVNode, openBlock as _openBlock, createBlock as _createBlock } from "vue"
+
+const _hoisted_1 = { class: "navbar navbar-expand-lg navbar-dark fixed-top" }
+const _hoisted_2 = /*#__PURE__*/_createVNode("a", {
+  class: "navbar-brand",
+  href: "/"
+}, [
+  /*#__PURE__*/_createVNode("h3", null, [
+    /*#__PURE__*/_createVNode("b", null, "Battata")
+  ])
+], -1 /* HOISTED */)
+const _hoisted_3 = {
+  class: "collapse navbar-collapse",
+  id: "navbarResponsive"
+}
+const _hoisted_4 = /*#__PURE__*/_createStaticVNode("<ul class=\"navbar-nav text-center\"><li class=\"nav-item\"><a class=\"nav-link\" href=\"/about/\"><h5>About</h5></a></li><li class=\"nav-item\"><a href=\"/vueshop/\" class=\"nav-link\"><h5>Vue Shop</h5></a></li></ul>", 1)
+const _hoisted_5 = { class: "shopcart" }
+const _hoisted_6 = /*#__PURE__*/_createVNode("i", { class: "fa fa-shopping-cart fa-2x icon-grey" }, null, -1 /* HOISTED */)
+
+export function render(_ctx, _cache) {
+  return (_openBlock(), _createBlock("div", null, [
+    _createVNode("nav", _hoisted_1, [
+      _hoisted_2,
+      _createVNode("div", _hoisted_3, [
+        _hoisted_4,
+        _createVNode("div", _hoisted_5, [
+          _hoisted_6,
+          _createVNode("h6", null, _toDisplayString(_ctx.getInc), 1 /* TEXT */)
+        ])
+      ])
+    ])
+  ]))
+}
+if (module.hot) {
+  module.hot.accept(() => {
+    __VUE_HMR_RUNTIME__.rerender('0a3782-hmr', render);
+  })
+}

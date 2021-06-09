@@ -1,0 +1,9 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _vue = require("vue");
+var _basketVue = require("./basket.vue");
+var _basketVueDefault = parcelHelpers.interopDefault(_basketVue);
+var _indexJs = require("../store/index.js");
+var _indexJsDefault = parcelHelpers.interopDefault(_indexJs);
+const app = _vue.createApp(_basketVueDefault.default);
+app.use(_indexJsDefault.default);
+app.mount("#basket");

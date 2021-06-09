@@ -1,0 +1,20 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "setupDevtoolsPlugin", ()=>setupDevtoolsPlugin
+);
+var _env = require("./env");
+var _const = require("./const");
+var _api = require("./api");
+parcelHelpers.exportAll(_api, exports);
+function setupDevtoolsPlugin(pluginDescriptor, setupFn) {
+    const hook = _env.getDevtoolsGlobalHook();
+    if (hook) hook.emit(_const.HOOK_SETUP, pluginDescriptor, setupFn);
+    else {
+        const target = _env.getTarget();
+        const list = target.__VUE_DEVTOOLS_PLUGINS__ = target.__VUE_DEVTOOLS_PLUGINS__ || [];
+        list.push({
+            pluginDescriptor,
+            setupFn
+        });
+    }
+}

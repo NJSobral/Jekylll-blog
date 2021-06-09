@@ -1,0 +1,24 @@
+<html lang="{{ page.lang | default: site.lang | default:"en" }}">
+    {% include head.html %}
+    <body>
+        {% include navbar.html %}
+        <main class="page-content" aria-label="Content">
+            <div class="wrapper">
+                {% include shop.html %}
+                <!-- {% include basket.html %} -->
+            </div>
+        </main>
+        {% include footer.html %}
+        <script>
+            if (window.netlifyIdentity) {
+              window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                  window.netlifyIdentity.on("login", () => {
+                    document.location.href = "/admin/";
+                  });
+                }
+              });
+            }
+          </script>
+    </body>
+</html>
