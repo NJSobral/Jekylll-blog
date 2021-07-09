@@ -1,0 +1,12 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _vue = require("vue");
+var _basketVue = require("./basket.vue");
+var _basketVueDefault = parcelHelpers.interopDefault(_basketVue);
+var _indexJs = require("../store/index.js");
+var _indexJsDefault = parcelHelpers.interopDefault(_indexJs);
+var _vuetifyJs = require("../plugins/vuetify.js");
+var _vuetifyJsDefault = parcelHelpers.interopDefault(_vuetifyJs);
+const app = _vue.createApp(_basketVueDefault.default);
+app.use(_indexJsDefault.default);
+app.use(_vuetifyJsDefault.default);
+app.mount("#basket");

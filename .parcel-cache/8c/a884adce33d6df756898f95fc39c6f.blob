@@ -1,0 +1,9 @@
+
+export function render(_ctx, _cache) {
+  return null
+}
+if (module.hot) {
+  module.hot.accept(() => {
+    __VUE_HMR_RUNTIME__.rerender('1e4748-hmr', render);
+  })
+}

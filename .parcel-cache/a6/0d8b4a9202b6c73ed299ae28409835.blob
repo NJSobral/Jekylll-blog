@@ -1,0 +1,80 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "render", ()=>render
+);
+var _vue = require("vue");
+const _hoisted_1 = /*#__PURE__*/ _vue.createVNode("h1", null, "Shop", -1/* HOISTED */ );
+const _hoisted_2 = {
+    class: "grid-container"
+};
+const _hoisted_3 = /*#__PURE__*/ _vue.createVNode("div", {
+    class: "card-header"
+}, null, -1/* HOISTED */ );
+const _hoisted_4 = {
+    class: "card-content"
+};
+const _hoisted_5 = {
+    class: "list-item"
+};
+function render(_ctx, _cache) {
+    const _component_router_link = _vue.resolveComponent("router-link");
+    return _vue.openBlock(), _vue.createBlock("div", null, [
+        _hoisted_1,
+        _vue.createVNode("ul", _hoisted_2, [
+            (_vue.openBlock(true), _vue.createBlock(_vue.Fragment, null, _vue.renderList(_ctx.getMovies, (movie)=>{
+                return _vue.openBlock(), _vue.createBlock("div", {
+                    class: "card",
+                    key: movie.id
+                }, [
+                    _hoisted_3,
+                    _vue.createVNode("div", _hoisted_4, [
+                        _vue.createVNode(_component_router_link, {
+                            to: {
+                                name: 'movie',
+                                params: {
+                                    id: movie.id
+                                }
+                            }
+                        }, {
+                            default: _vue.withCtx(()=>[
+                                    _vue.createVNode("h4", null, _vue.toDisplayString(movie.title), 1/* TEXT */ )
+                                ]
+                            ),
+                            _: 2
+                        }, 1032/* PROPS, DYNAMIC_SLOTS */ , [
+                            "to"
+                        ])
+                    ]),
+                    (_vue.openBlock(true), _vue.createBlock(_vue.Fragment, null, _vue.renderList(movie.category, (category)=>{
+                        return _vue.openBlock(), _vue.createBlock("ul", {
+                            class: "list-inline",
+                            key: category.id
+                        }, [
+                            _vue.createVNode(_component_router_link, {
+                                to: {
+                                    name: 'category',
+                                    params: {
+                                        name: category.cname
+                                    }
+                                }
+                            }, {
+                                default: _vue.withCtx(()=>[
+                                        _vue.createVNode("li", _hoisted_5, [
+                                            _vue.createVNode("h6", null, _vue.toDisplayString(category.cname), 1/* TEXT */ )
+                                        ])
+                                    ]
+                                ),
+                                _: 2
+                            }, 1032/* PROPS, DYNAMIC_SLOTS */ , [
+                                "to"
+                            ])
+                        ]);
+                    }), 128/* KEYED_FRAGMENT */ ))
+                ]);
+            }), 128/* KEYED_FRAGMENT */ ))
+        ])
+    ]);
+}
+if (module.hot) module.hot.accept(()=>{
+    __VUE_HMR_RUNTIME__.rerender('130d12-hmr', render);
+});

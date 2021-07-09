@@ -1,0 +1,80 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _movies = require("../data/movies");
+var _moviesDefault = parcelHelpers.interopDefault(_movies);
+const state1 = ()=>({
+        count: 0,
+        movie: {
+        },
+        movies: [],
+        moviesbycategory: [],
+        categories: [],
+        checkoutstatus: null
+    })
+;
+const mutations = {
+    increment (state) {
+        state.count++;
+    },
+    setMovies (state, movies) {
+        state.movies = movies;
+    },
+    setMovie (state, movie) {
+        state.movie = movie;
+    },
+    setMoviesbyCategory (state, movies) {
+        state.movies = movies;
+    },
+    setCategories (state, categories) {
+        state.categories = categories;
+    }
+};
+const actions = {
+    inc ({ commit  }) {
+        commit('increment');
+    },
+    getAllMovies ({ commit  }) {
+        _moviesDefault.default.getMovies((movies)=>{
+            console.log(movies);
+            localStorage.setItem('movies', JSON.stringify(movies));
+            commit('setMovies', movies);
+        });
+    },
+    getAllCategories ({ commit  }) {
+        _moviesDefault.default.getCategories((categories)=>{
+            localStorage.setItem('categories', JSON.stringify(categories));
+            commit('setCategories', categories);
+        });
+    }
+};
+const getters = {
+    getInc: (state2)=>{
+        return state2.count;
+    },
+    getMovies: (state2)=>{
+        return state2.movies;
+    },
+    getCategories: (state2)=>{
+        return state2.categories;
+    },
+    getMoviesbyCategory: (state2)=>(category)=>{
+            return state2.movies.filter((element)=>{
+                var result = false;
+                element.category.forEach((item)=>{
+                    if (item.name === category) result = true;
+                });
+                return result;
+            });
+        }
+    ,
+    getMovie: (state2)=>(id)=>{
+            return state2.movies.find((element)=>element.id === id
+            );
+        }
+};
+exports.default = {
+    state: state1,
+    getters,
+    actions,
+    mutations
+};

@@ -1,0 +1,66 @@
+import { createVNode as _createVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, withScopeId as _withScopeId, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from "vue"
+const _withId = /*#__PURE__*/_withScopeId("data-v-1e4748")
+
+_pushScopeId("data-v-1e4748")
+const _hoisted_1 = { class: "wrapper" }
+const _hoisted_2 = /*#__PURE__*/_createVNode("h1", { class: "batta" }, " Sign up form ", -1 /* HOISTED */)
+const _hoisted_3 = /*#__PURE__*/_createVNode("label", { name: "name" }, "Usename", -1 /* HOISTED */)
+const _hoisted_4 = /*#__PURE__*/_createVNode("br", null, null, -1 /* HOISTED */)
+const _hoisted_5 = /*#__PURE__*/_createVNode("br", null, null, -1 /* HOISTED */)
+const _hoisted_6 = /*#__PURE__*/_createVNode("label", { name: "password" }, "Password", -1 /* HOISTED */)
+const _hoisted_7 = /*#__PURE__*/_createVNode("br", null, null, -1 /* HOISTED */)
+const _hoisted_8 = /*#__PURE__*/_createVNode("br", null, null, -1 /* HOISTED */)
+const _hoisted_9 = /*#__PURE__*/_createVNode("button", {
+  class: "btn btn-primary btn-lg mx-5 my-5",
+  type: "submit"
+}, "submit", -1 /* HOISTED */)
+_popScopeId()
+
+export const render = /*#__PURE__*/_withId((_ctx, _cache) => {
+  const _component_Field = _resolveComponent("Field")
+  const _component_ErrorMessage = _resolveComponent("ErrorMessage")
+  const _component_Form = _resolveComponent("Form")
+
+  return (_openBlock(), _createBlock("div", _hoisted_1, [
+    _hoisted_2,
+    _createVNode(_component_Form, {
+      onSubmit: _ctx.onSubmit,
+      class: "form mt-5"
+    }, {
+      default: _withId(() => [
+        _hoisted_3,
+        _createVNode(_component_Field, {
+          class: "input mx-4",
+          name: "name",
+          type: "text",
+          placeholder: "who are you",
+          rules: _ctx.isRequired
+        }, null, 8 /* PROPS */, ["rules"]),
+        _hoisted_4,
+        _createVNode(_component_ErrorMessage, {
+          name: "name",
+          class: "error mx-5"
+        }),
+        _hoisted_5,
+        _hoisted_6,
+        _createVNode(_component_Field, {
+          class: "input mx-4",
+          name: "password",
+          type: "text",
+          placeholder: "password",
+          rules: _ctx.isRequired
+        }, null, 8 /* PROPS */, ["rules"]),
+        _hoisted_7,
+        _createVNode(_component_ErrorMessage, { name: "name" }),
+        _hoisted_8,
+        _hoisted_9
+      ]),
+      _: 1 /* STABLE */
+    }, 8 /* PROPS */, ["onSubmit"])
+  ]))
+})
+if (module.hot) {
+  module.hot.accept(() => {
+    __VUE_HMR_RUNTIME__.rerender('1e4748-hmr', render);
+  })
+}

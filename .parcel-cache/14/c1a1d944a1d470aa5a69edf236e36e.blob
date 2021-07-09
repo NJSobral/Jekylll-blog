@@ -1,0 +1,33 @@
+import { createVNode as _createVNode, resolveComponent as _resolveComponent, toDisplayString as _toDisplayString, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, withScopeId as _withScopeId, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from "vue"
+const _withId = /*#__PURE__*/_withScopeId("data-v-1e4748")
+
+_pushScopeId("data-v-1e4748")
+const _hoisted_1 = { class: "wrapper" }
+const _hoisted_2 = /*#__PURE__*/_createVNode("h1", { class: "batta" }, " Sign up form ", -1 /* HOISTED */)
+const _hoisted_3 = /*#__PURE__*/_createVNode("br", null, null, -1 /* HOISTED */)
+_popScopeId()
+
+export const render = /*#__PURE__*/_withId((_ctx, _cache) => {
+  const _component_Field = _resolveComponent("Field")
+  const _component_Form = _resolveComponent("Form")
+
+  return (_openBlock(), _createBlock("div", _hoisted_1, [
+    _hoisted_2,
+    _createVNode(_component_Form, null, {
+      default: _withId(({ errors }) => [
+        _createVNode(_component_Field, {
+          name: "field",
+          rules: _ctx.isRequired
+        }, null, 8 /* PROPS */, ["rules"]),
+        _hoisted_3,
+        _createVNode("span", null, _toDisplayString(errors.field), 1 /* TEXT */)
+      ]),
+      _: 1 /* STABLE */
+    })
+  ]))
+})
+if (module.hot) {
+  module.hot.accept(() => {
+    __VUE_HMR_RUNTIME__.rerender('1e4748-hmr', render);
+  })
+}

@@ -1,0 +1,44 @@
+import { createVNode as _createVNode, createCommentVNode as _createCommentVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, withScopeId as _withScopeId, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from "vue"
+const _withId = /*#__PURE__*/_withScopeId("data-v-1e4748")
+
+_pushScopeId("data-v-1e4748")
+const _hoisted_1 = { class: "wrapper" }
+const _hoisted_2 = /*#__PURE__*/_createVNode("h1", { class: "batta" }, " Vee-Validate 4.0.0 ", -1 /* HOISTED */)
+const _hoisted_3 = /*#__PURE__*/_createVNode("h2", null, "Form level Validation", -1 /* HOISTED */)
+const _hoisted_4 = /*#__PURE__*/_createVNode("button", null, "Submit", -1 /* HOISTED */)
+_popScopeId()
+
+export const render = /*#__PURE__*/_withId((_ctx, _cache) => {
+  const _component_Field = _resolveComponent("Field")
+  const _component_ErrorMessage = _resolveComponent("ErrorMessage")
+  const _component_Form = _resolveComponent("Form")
+
+  return (_openBlock(), _createBlock("div", _hoisted_1, [
+    _hoisted_2,
+    _createCommentVNode(" <Form @submit=\"onSubmit\" class=\"form mt-5\">\n            <h2>Field level Validation</h2>\n            <div class=\"container\">\n                <h3>Basic Validation</h3>\n                <label name=\"name\">Username</label>\n                <Field class=\"input mx-4\" name=\"name\" type=\"text\" placeholder=\"who are you\" :rules=\"isRequired\"/>\n                <ErrorMessage name=\"name\" class=\"error mx-2\"></ErrorMessage>\n                </div>\n            <br>\n            <div class=\"container\">\n                <h3>Validation with yup</h3> \n                <label  name=\"password\">Password</label>\n                <Field class=\"input my-3 mx-4\" name=\"password\" type=\"text\" placeholder=\"password\" :rules=\"passwordRules\"/>\n                <ErrorMessage class=\"error mx-2\" name=\"password\"></ErrorMessage>\n            </div>\n            <br>\n            <button class=\"btn btn-primary btn-lg mx-5 my-4\" type=\"submit\">submit</button>\n        </Form>\n        <br> "),
+    _hoisted_3,
+    _createVNode(_component_Form, {
+      onSubmit: _ctx.submit,
+      "validation-schema": _ctx.simpleSchema
+    }, {
+      default: _withId(() => [
+        _createVNode(_component_Field, { name: "email" }),
+        _createVNode(_component_ErrorMessage, { name: "email" }),
+        _createVNode(_component_Field, {
+          name: "password",
+          type: "password"
+        }),
+        _createVNode(_component_ErrorMessage, { name: "password" }),
+        _hoisted_4
+      ]),
+      _: 1 /* STABLE */
+    }, 8 /* PROPS */, ["onSubmit", "validation-schema"]),
+    _createCommentVNode(" <Form @submit=\"onSubmit\" :validation-shema=\"simpleSchema\">\n                <h2>Simpleschema</h2>\n                <label name=\"email\">Email</label>\n                <Field class=\"input mx-5\" name=\"email\"></Field>\n                <ErrorMessage name=\"email\"></ErrorMessage>\n                <br>\n                <label name=\"password\">Password</label>\n                <Field class=\"input mx-4\" name=\"password\"></Field>\n                <ErrorMessage class=\"error mx-2\" name=\"password\"></ErrorMessage>\n                <br>\n                <button class=\"btn btn-primary btn-lg mx-5 my-4\" type=\"submit\">submit</button>\n            </Form> "),
+    _createCommentVNode(" <div class=\"container\">\n        \n            <Form @submit=\"submit\" :validation-shema=\"simpleschema\">\n                <h2>yup schema</h2>\n                <label name=\"email\">Email</label>\n                <Field class=\"input mx-5\" name=\"email\"></Field>\n                <ErrorMessage class=\"error mx-2\" name=\"email\"></ErrorMessage>\n                <br>\n                <label name=\"password\">Password</label>\n                <Field class=\"input mx-4\" name=\"password\"></Field>\n                <ErrorMessage class=\"error mx-2\" name=\"password\"></ErrorMessage>\n                <br>\n                <button class=\"btn btn-primary btn-lg mx-5 my-4\" type=\"submit\">submit</button>\n            </Form>\n        </div> ")
+  ]))
+})
+if (module.hot) {
+  module.hot.accept(() => {
+    __VUE_HMR_RUNTIME__.rerender('1e4748-hmr', render);
+  })
+}

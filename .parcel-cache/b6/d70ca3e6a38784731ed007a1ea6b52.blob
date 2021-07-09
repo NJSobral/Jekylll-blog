@@ -1,0 +1,24 @@
+
+let script;
+let initialize = () => {
+  script = require('script:./shop.vue');
+  if (script.__esModule) script = script.default;
+  script.render = require('template:./shop.vue').render;
+  script.__cssModules = require('style:./shop.vue').default;
+  require('custom:./shop.vue').default(script);
+  script.__scopeId = 'data-v-130d12';
+  script.__file = "/home/joao/jekyll-projects/git-projects/Jekylll-blog/vue/shop/shop.vue";
+};
+initialize();
+if (module.hot) {
+  script.__hmrId = '130d12-hmr';
+  module.hot.accept(() => {
+    setTimeout(() => {
+      initialize();
+      if (!__VUE_HMR_RUNTIME__.createRecord('130d12-hmr', script)) {
+        __VUE_HMR_RUNTIME__.reload('130d12-hmr', script);
+      }
+    }, 0);
+  });
+}
+export default script;

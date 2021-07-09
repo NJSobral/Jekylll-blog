@@ -1,0 +1,86 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "render", ()=>render
+);
+var _vue = require("vue");
+const _hoisted_1 = /*#__PURE__*/ _vue.createVNode("h1", null, "PLP -> Product listing page", -1/* HOISTED */ );
+const _hoisted_2 = {
+    class: "container ",
+    style: {
+        "margin-left": "150px"
+    }
+};
+const _hoisted_3 = {
+    class: "nav justify-content-center my-5",
+    style: {
+        "display": "inline-block"
+    }
+};
+const _hoisted_4 = /*#__PURE__*/ _vue.createVNode("li", {
+    class: "nav-item mx-3"
+}, " All ", -1/* HOISTED */ );
+const _hoisted_5 = {
+    class: "nav-item mx-3"
+};
+const _hoisted_6 = /*#__PURE__*/ _vue.createVNode("div", {
+    class: "grid-container"
+}, [
+    /*#__PURE__*/ _vue.createVNode("h1", null, "getMovies[2]"),
+    /*#__PURE__*/ _vue.createCommentVNode(" <div class=\"card\" v-for=\"movie in getMovies\" :key=\"movie.id\" >\n        <div class=\"card-header\"></div>\n        <div class=\"card-content\">\n          <router-link :to=\"{ name: 'movie', params: { id: movie.id } }\">\n            <h4>{{ movie.title }}</h4>\n          </router-link>\n        </div>\n        <h5>Categories:</h5>\n        <ul class=\"list squared mx-4 my-1\" v-for=\"category in movie.category\" :key=\"category.id\">\n            <li class=\"lis-item\">\n                <h6> {{category.name}}</h6>\n            </li>   \n        </ul>\n      </div> ")
+], -1/* HOISTED */ );
+function render(_ctx, _cache) {
+    const _component_router_link = _vue.resolveComponent("router-link");
+    return _vue.openBlock(), _vue.createBlock("div", null, [
+        _hoisted_1,
+        _vue.createVNode("div", _hoisted_2, [
+            _vue.createVNode("ul", _hoisted_3, [
+                _vue.createVNode(_component_router_link, {
+                    to: {
+                        name: 'category',
+                        params: {
+                            name: _ctx.All
+                        }
+                    }
+                }, {
+                    default: _vue.withCtx(()=>[
+                            _hoisted_4
+                        ]
+                    ),
+                    _: 1
+                }, 8/* PROPS */ , [
+                    "to"
+                ])
+            ]),
+            (_vue.openBlock(true), _vue.createBlock(_vue.Fragment, null, _vue.renderList(_ctx.getCategories, (category)=>{
+                return _vue.openBlock(), _vue.createBlock("ul", {
+                    class: "nav justify-content-center my-5",
+                    style: {
+                        "display": "inline-block"
+                    },
+                    key: category.id
+                }, [
+                    _vue.createVNode(_component_router_link, {
+                        to: {
+                            name: 'category',
+                            params: {
+                                name: category.name
+                            }
+                        }
+                    }, {
+                        default: _vue.withCtx(()=>[
+                                _vue.createVNode("li", _hoisted_5, _vue.toDisplayString(category.name), 1/* TEXT */ )
+                            ]
+                        ),
+                        _: 2
+                    }, 1032/* PROPS, DYNAMIC_SLOTS */ , [
+                        "to"
+                    ])
+                ]);
+            }), 128/* KEYED_FRAGMENT */ ))
+        ]),
+        _hoisted_6
+    ]);
+}
+if (module.hot) module.hot.accept(()=>{
+    __VUE_HMR_RUNTIME__.rerender('5e6e85-hmr', render);
+});

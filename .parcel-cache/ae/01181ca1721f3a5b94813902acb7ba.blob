@@ -1,0 +1,22 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+let script;
+let initialize = ()=>{
+    script = require('script:./signup.vue');
+    if (script.__esModule) script = script.default;
+    script.render = require('template:./signup.vue').render;
+    require('custom:./signup.vue').default(script);
+    script.__scopeId = 'data-v-1e4748';
+    script.__file = "/home/joao/jekyll-projects/git-projects/Jekylll-blog/vue/signup/signup.vue";
+};
+initialize();
+if (module.hot) {
+    script.__hmrId = '1e4748-hmr';
+    module.hot.accept(()=>{
+        setTimeout(()=>{
+            initialize();
+            if (!__VUE_HMR_RUNTIME__.createRecord('1e4748-hmr', script)) __VUE_HMR_RUNTIME__.reload('1e4748-hmr', script);
+        }, 0);
+    });
+}
+exports.default = script;

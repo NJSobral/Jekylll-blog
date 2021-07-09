@@ -1,0 +1,15 @@
+import { createVNode as _createVNode, openBlock as _openBlock, createBlock as _createBlock } from "vue"
+
+const _hoisted_1 = { class: "div" }
+const _hoisted_2 = /*#__PURE__*/_createVNode("h1", null, " Sign up forms ", -1 /* HOISTED */)
+
+export function render(_ctx, _cache) {
+  return (_openBlock(), _createBlock("div", _hoisted_1, [
+    _hoisted_2
+  ]))
+}
+if (module.hot) {
+  module.hot.accept(() => {
+    __VUE_HMR_RUNTIME__.rerender('1e4748-hmr', render);
+  })
+}

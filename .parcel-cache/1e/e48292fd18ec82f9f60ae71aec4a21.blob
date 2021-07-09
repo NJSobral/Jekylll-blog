@@ -1,0 +1,30 @@
+
+import { mapActions, mapGetters } from "vuex";
+
+export default {
+  props: {
+    id: {
+      type: Number,
+      required: false,
+      default: 1
+    }
+  },
+  methods: {
+      ...mapActions(["getAllMovies" ]),
+      getData() {
+        this.getAllMovies();
+        },
+
+    },
+  computed: {
+      ...mapGetters(["getMovies", "getMovie"]),
+      currentMovie(){
+        if(this.id == 2)
+        return this.getMovie(this.id);
+      }
+  },
+  created() {
+    this.getData()
+  },
+
+}

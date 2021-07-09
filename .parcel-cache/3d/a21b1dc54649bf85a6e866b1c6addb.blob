@@ -1,0 +1,25 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _veeValidate = require("vee-validate");
+exports.default = {
+    components: {
+        Form: _veeValidate.Form,
+        Field: _veeValidate.Field,
+        ErrorMessage: _veeValidate.ErrorMessage
+    },
+    data () {
+        const simpleSchema = {
+            email (value) {
+            // validate email value...
+            },
+            name (value) {
+            // validate name value...
+            },
+            // If you defined global rules you can also use them
+            password: 'required|min:8'
+        };
+        return {
+            simpleSchema
+        };
+    }
+};

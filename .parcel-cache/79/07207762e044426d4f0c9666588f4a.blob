@@ -1,0 +1,42 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _movies = require("../data/movies");
+var _moviesDefault = parcelHelpers.interopDefault(_movies);
+const state1 = ()=>({
+        count: 0,
+        movies: [],
+        checkoutstatus: null
+    })
+;
+const mutations = {
+    increment (state) {
+        state.count++;
+    },
+    setMovies (state, movies) {
+        state.movies = movies;
+    }
+};
+const actions = {
+    inc ({ commit  }) {
+        commit('increment');
+    },
+    getAllMovies ({ commit  }) {
+        _moviesDefault.default.getMovies((movies)=>{
+            commit('setMovies', movies);
+        });
+    }
+};
+const getters = {
+    getInc: (state2)=>{
+        return state2.count;
+    },
+    getMovies: (state2)=>{
+        return state2.movies;
+    }
+};
+exports.default = {
+    state: state1,
+    getters,
+    actions,
+    mutations
+};

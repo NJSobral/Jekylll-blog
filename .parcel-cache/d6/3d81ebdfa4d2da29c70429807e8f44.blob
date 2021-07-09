@@ -1,0 +1,34 @@
+
+import { mapActions, mapGetters } from 'vuex';
+  export default {
+    data() {
+      return {
+        count: 0 ,
+      };
+    },
+    methods:{
+      ...mapActions([
+        'inc',
+        'getAllMovies',
+        'getAllCategories'
+        
+      ]),
+      increment2() {
+        this.inc()
+        console.log(this.$store.state.count)
+      },
+      getData(){
+        this.getAllMovies()        
+      }
+    },
+    computed:{
+      ...mapGetters([
+        'getInc',
+        'getMovies',
+        'getCategories'
+      ]),
+    },
+    created(){
+      this.getData()
+    }
+  };

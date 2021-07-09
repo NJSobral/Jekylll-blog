@@ -1,0 +1,45 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _vuex = require("vuex");
+exports.default = {
+    props: [
+        "category"
+    ],
+    data () {
+        return {
+            movies: []
+        };
+    },
+    methods: {
+        ..._vuex.mapActions([
+            "getAllMovies",
+            "getAllCategories",
+            "getAllMoviesbyCategory", 
+        ]),
+        getData () {
+            this.getAllMovies();
+            this.getAllCategories();
+        },
+        showMovies (evt, category) {
+            this.getAllMoviesbyCategory(category);
+            this.movies = this.getMoviesbyCategory;
+            var i, moviestore, categories;
+            moviestore = document.getElementsByClassName("moviestore");
+            for(i = 0; i < tabcontent.length; i++)moviestore[i].style.display = "none";
+            categories = document.getElementsByClassName("nav-item");
+            for(i = 0; i < tablinks.length; i++)categories[i].className = categories[i].className.replace(" active", "");
+            document.getElementById(category).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    },
+    computed: {
+        ..._vuex.mapGetters([
+            "getMovies",
+            "getMoviesbyCategory",
+            "getCategories"
+        ])
+    },
+    created () {
+        this.getData();
+    }
+};

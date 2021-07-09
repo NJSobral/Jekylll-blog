@@ -1,0 +1,5 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "HOOK_SETUP", ()=>HOOK_SETUP
+);
+const HOOK_SETUP = 'devtools-plugin:setup';

@@ -1,0 +1,11 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _vue = require("vue");
+var _shopVue = require("./shop.vue");
+var _shopVueDefault = parcelHelpers.interopDefault(_shopVue);
+var _indexJs = require("../store/index.js");
+var _indexJsDefault = parcelHelpers.interopDefault(_indexJs);
+var _router = require("./router");
+var _routerDefault = parcelHelpers.interopDefault(_router);
+const app = _vue.createApp(_shopVueDefault.default);
+app.use(_indexJsDefault.default);
+app.mount("#shop");

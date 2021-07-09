@@ -29043,39 +29043,7 @@ exports.default = {
     }
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"367CR","vuex":"2F56c"}],"367CR":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, '__esModule', {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === 'default' || key === '__esModule') return;
-        // Skip duplicate re-exports when they have the same value.
-        if (key in dest && dest[key] === source[key]) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"2F56c":[function(require,module,exports) {
+},{"vuex":"2F56c","@parcel/transformer-js/src/esmodule-helpers.js":"367CR"}],"2F56c":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Store", ()=>Store
@@ -30293,7 +30261,39 @@ function getTarget() {
     };
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"367CR"}],"7wGEU":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"367CR"}],"367CR":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule') return;
+        // Skip duplicate re-exports when they have the same value.
+        if (key in dest && dest[key] === source[key]) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"7wGEU":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "HOOK_SETUP", ()=>HOOK_SETUP
@@ -30349,9 +30349,9 @@ const _hoisted_3 = {
     class: "collapse navbar-collapse",
     id: "navbarResponsive"
 };
-const _hoisted_4 = /*#__PURE__*/ _vue.createStaticVNode("<ul class=\"navbar-nav text-center\"><li class=\"nav-item\"><a class=\"nav-link\" href=\"/about/\"><h5>About</h5></a></li><li class=\"nav-item\"><a href=\"/vueshop/\" class=\"nav-link\"><h5>Vue Shop</h5></a></li></ul>", 1);
+const _hoisted_4 = /*#__PURE__*/ _vue.createStaticVNode("<ul class=\"navbar-nav text-center\"><li class=\"nav-item\"><a class=\"nav-link\" href=\"/about/\"><h5>About</h5></a></li><li class=\"nav-item\"><a href=\"/shop/\" class=\"nav-link\"><h5>Shop</h5></a></li><li class=\"nav-item\"><a href=\"/signup/\" class=\"nav-link\">Sign Up</a></li></ul>", 1);
 const _hoisted_5 = {
-    class: "button button5"
+    class: "button"
 };
 const _hoisted_6 = /*#__PURE__*/ _vue.createVNode("i", {
     class: "fa fa-shopping-cart fa-2x icon-grey"
@@ -30386,19 +30386,40 @@ exports.default = (script)=>{
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _vuex = require("vuex");
-var _vuexDefault = parcelHelpers.interopDefault(_vuex);
 var _navbarstore = require("./modules/navbarstore");
 var _navbarstoreDefault = parcelHelpers.interopDefault(_navbarstore);
 var _shopstore = require("./modules/shopstore");
 var _shopstoreDefault = parcelHelpers.interopDefault(_shopstore);
-exports.default = new _vuexDefault.default.Store({
+// Create a new store instance.
+// const store = createStore({
+//     state() {
+//         return {
+//       count: 0
+//     }
+//     },
+//     mutations: {
+//       increment (state) {
+//         state.count++
+//       }
+//     },
+//     actions:{
+//       inc({commit}) {
+//           commit('increment')
+//       } 
+//     },
+//     getters: {
+//         getInc:  state => { return state.count}
+//     }
+//   })
+const store = _vuex.createStore({
     modules: {
-        navbarstore,
-        shopstore
+        navbarstore: _navbarstoreDefault.default,
+        shopstore: _shopstoreDefault.default
     }
 });
+exports.default = store;
 
-},{"vuex":"2F56c","@parcel/transformer-js/src/esmodule-helpers.js":"367CR","./modules/navbarstore":"29Bq8","./modules/shopstore":"5za8w"}],"29Bq8":[function(require,module,exports) {
+},{"vuex":"2F56c","./modules/navbarstore":"29Bq8","./modules/shopstore":"5za8w","@parcel/transformer-js/src/esmodule-helpers.js":"367CR"}],"29Bq8":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 const state1 = ()=>{
@@ -30429,33 +30450,258 @@ exports.default = {
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"367CR"}],"5za8w":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-// Create a new store instance.
+var _movies = require("../data/movies");
+var _moviesDefault = parcelHelpers.interopDefault(_movies);
 const state1 = ()=>({
         count: 0,
-        item: [],
+        movie: {
+        },
+        movies: [],
+        moviesbycategory: [],
+        categories: [],
         checkoutstatus: null
     })
 ;
 const mutations = {
     increment (state) {
         state.count++;
+    },
+    setMovies (state, movies) {
+        state.movies = movies;
+    },
+    setMovie (state, movie) {
+        state.movie = movie;
+    },
+    setMoviesbyCategory (state, movies) {
+        state.movies = movies;
+    },
+    setCategories (state, categories) {
+        state.categories = categories;
     }
 };
 const actions = {
     inc ({ commit  }) {
         commit('increment');
+    },
+    getAllMovies ({ commit  }) {
+        _moviesDefault.default.getMovies((movies)=>{
+            localStorage.setItem('movies', JSON.stringify(movies));
+            commit('setMovies', movies);
+        });
+    },
+    getAllCategories ({ commit  }) {
+        _moviesDefault.default.getCategories((categories)=>{
+            localStorage.setItem('categories', JSON.stringify(categories));
+            commit('setCategories', categories);
+        });
     }
 };
 const getters = {
     getInc: (state2)=>{
         return state2.count;
-    }
+    },
+    getMovies: (state2)=>{
+        return state2.movies;
+    },
+    getCategories: (state2)=>{
+        return state2.categories;
+    },
+    getMoviesbyCategory: (state2)=>(category)=>{
+            return state2.movies.filter((element)=>{
+                var result = false;
+                element.category.forEach((item)=>{
+                    if (item.name === category) result = true;
+                });
+                return result;
+            });
+        }
+    ,
+    getMovie: (state2)=>(id)=>{
+            return state2.movies.find((element)=>element.id === id
+            );
+        }
 };
 exports.default = {
     state: state1,
     getters,
     actions,
     mutations
+};
+
+},{"../data/movies":"1cwI2","@parcel/transformer-js/src/esmodule-helpers.js":"367CR"}],"1cwI2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+const _movies = [
+    {
+        'id': 1,
+        'title': 'Pirates of the Caribbean',
+        'category': [
+            {
+                'id': 1,
+                'name': 'Fantasy'
+            }
+        ],
+        'price': 10.01,
+        'inventory': 2
+    },
+    {
+        'id': 2,
+        'title': 'Harry Potter',
+        'category': [
+            {
+                'id': 1,
+                'name': 'Fantasy'
+            }
+        ],
+        'price': 10.99,
+        'inventory': 10
+    },
+    {
+        'id': 3,
+        'title': 'Lord of the Rings',
+        'category': [
+            {
+                'id': 1,
+                'name': 'Fantasy'
+            }
+        ],
+        'price': 19.99,
+        'inventory': 5
+    },
+    {
+        'id': 4,
+        'title': 'Star Wars',
+        'category': [
+            {
+                'id': 1,
+                'name': 'Sci-fi'
+            }
+        ],
+        'price': 19.99,
+        'inventory': 5
+    },
+    {
+        'id': 5,
+        'title': 'Alien vs Predator',
+        'category': [
+            {
+                'id': 1,
+                'name': 'Sci-fi'
+            }
+        ],
+        'price': 19.99,
+        'inventory': 5
+    },
+    {
+        'id': 6,
+        'title': 'Wolf of wall street',
+        'category': [
+            {
+                'id': 1,
+                'name': 'Drama'
+            },
+            {
+                'id': 1,
+                'name': 'Crime'
+            }
+        ],
+        'price': 19.99,
+        'inventory': 5
+    },
+    {
+        'id': 7,
+        'title': 'Batman Begins',
+        'category': [
+            {
+                'id': 1,
+                'name': 'Super-hero'
+            }
+        ],
+        'price': 19.99,
+        'inventory': 5
+    },
+    {
+        'id': 8,
+        'title': 'Avengers: End Game',
+        'category': [
+            {
+                'id': 1,
+                'name': 'Super-hero'
+            }
+        ],
+        'price': 19.99,
+        'inventory': 5
+    },
+    {
+        'id': 9,
+        'title': 'Figth Club',
+        'category': [
+            {
+                'id': 1,
+                'name': 'Drama'
+            },
+            {
+                'id': 1,
+                'name': 'Crime'
+            }
+        ],
+        'price': 19.99,
+        'inventory': 5
+    },
+    {
+        'id': 10,
+        'title': 'Shutter Island',
+        'category': [
+            {
+                'id': 1,
+                'name': 'Drama'
+            }
+        ],
+        'price': 19.99,
+        'inventory': 5
+    }
+];
+const _categories = [
+    {
+        'id': 0,
+        'name': 'All'
+    },
+    {
+        'id': 1,
+        'name': 'Fantasy'
+    },
+    {
+        'id': 2,
+        'name': 'Sci-fi'
+    },
+    {
+        'id': 3,
+        'name': 'Drama'
+    },
+    {
+        'id': 4,
+        'name': 'Crime'
+    },
+    {
+        'id': 5,
+        'name': 'Super-hero'
+    }
+];
+exports.default = {
+    getMovies (cb) {
+        setTimeout(()=>cb(_movies)
+        , 100);
+    },
+    getCategories (cb) {
+        setTimeout(()=>cb(_categories)
+        , 100);
+    },
+    buyMovies (movies, cb, errorCb) {
+        setTimeout(()=>{
+            // simulate random checkout failure.
+            Math.random() > 0.5 || navigator.webdriver ? cb() : errorCb();
+        }, 100);
+    }
 };
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"367CR"}]},["4hVZE","6s2zA"], "6s2zA", "parcelRequire2a87")

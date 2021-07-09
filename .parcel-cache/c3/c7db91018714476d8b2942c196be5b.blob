@@ -1,0 +1,23 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+let script;
+let initialize = ()=>{
+    script = require('script:./category.vue');
+    if (script.__esModule) script = script.default;
+    script.render = require('template:./category.vue').render;
+    script.__cssModules = require('style:./category.vue').default;
+    require('custom:./category.vue').default(script);
+    script.__scopeId = 'data-v-aaa339';
+    script.__file = "/home/joao/jekyll-projects/git-projects/Jekylll-blog/vue/shop/components/category.vue";
+};
+initialize();
+if (module.hot) {
+    script.__hmrId = 'aaa339-hmr';
+    module.hot.accept(()=>{
+        setTimeout(()=>{
+            initialize();
+            if (!__VUE_HMR_RUNTIME__.createRecord('aaa339-hmr', script)) __VUE_HMR_RUNTIME__.reload('aaa339-hmr', script);
+        }, 0);
+    });
+}
+exports.default = script;

@@ -1,0 +1,31 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _veeValidate = require("vee-validate");
+var _yup = require("yup");
+exports.default = {
+    components: {
+        Field: _veeValidate.Field,
+        Form: _veeValidate.Form,
+        ErrorMessage: _veeValidate.ErrorMessage
+    },
+    data () {
+        const simpleschema = {
+            email (value) {
+            },
+            name (value) {
+            }
+        };
+        return {
+            passwordRules: _yup.string().required().min(8)
+        };
+    },
+    methods: {
+        isRequired (value) {
+            if (value && value.trim()) return true;
+            return 'this is required';
+        },
+        onSubmit (values) {
+            alert(JSON.stringify(values, null, 2));
+        }
+    }
+};

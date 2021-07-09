@@ -1,0 +1,10 @@
+import { openBlock as _openBlock, createBlock as _createBlock } from "vue"
+
+export function render(_ctx, _cache) {
+  return (_openBlock(), _createBlock("h1", null, "PDP -> Product detail page"))
+}
+if (module.hot) {
+  module.hot.accept(() => {
+    __VUE_HMR_RUNTIME__.rerender('c0e18b-hmr', render);
+  })
+}

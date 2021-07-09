@@ -1,0 +1,75 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _movies = require("../data/movies");
+var _moviesDefault = parcelHelpers.interopDefault(_movies);
+const state1 = ()=>({
+        count: 0,
+        movie: null,
+        movies: [],
+        categories: [],
+        checkoutstatus: null
+    })
+;
+const mutations = {
+    increment (state) {
+        state.count++;
+    },
+    setMovies (state, movies) {
+        state.movies = movies;
+    },
+    setMovie (state, movie) {
+        state.movie = movie;
+    },
+    setCategories (state, categories) {
+        state.categories = categories;
+    }
+};
+const actions = {
+    inc ({ commit  }) {
+        commit('increment');
+    },
+    getAllMovies ({ commit  }) {
+        _moviesDefault.default.getMovies((movies)=>{
+            commit('setMovies', movies);
+        });
+    },
+    getMoviebyId ({ commit , state  }, id) {
+        const movies = [
+            ...state.movies
+        ];
+        console.log(id);
+        console.log(movies);
+        for(let i = 0; i < movies.length; i++)if (movies[i].id === id) {
+            const movie = movies[i];
+        }
+        const movie = movies.find((element)=>element.id === id
+        );
+        console.log(movie);
+        commit('setMovie', movie);
+    },
+    getAllCategories ({ commit  }) {
+        _moviesDefault.default.getCategories((categories)=>{
+            commit('setCategories', categories);
+        });
+    }
+};
+const getters = {
+    getInc: (state2)=>{
+        return state2.count;
+    },
+    getMovies: (state2)=>{
+        return state2.movies;
+    },
+    getMovie: (state2)=>{
+        return state2.movie;
+    },
+    getCategories: (state2)=>{
+        return state2.categories;
+    }
+};
+exports.default = {
+    state: state1,
+    getters,
+    actions,
+    mutations
+};

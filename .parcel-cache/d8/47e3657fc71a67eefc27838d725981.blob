@@ -1,0 +1,14 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _veeValidate = require("vee-validate");
+exports.default = {
+    components: {
+        Field: _veeValidate.Field,
+        Form: _veeValidate.Form
+    },
+    methods: {
+        isRequired (value) {
+            return value ? true : 'This field is required';
+        }
+    }
+};

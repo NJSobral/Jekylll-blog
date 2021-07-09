@@ -1,0 +1,4 @@
+---
+layout: signup
+permalink: /signup/
+---

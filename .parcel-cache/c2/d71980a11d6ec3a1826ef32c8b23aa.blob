@@ -1,0 +1,40 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "render", ()=>render
+);
+var _vue = require("vue");
+const _hoisted_1 = /*#__PURE__*/ _vue.createVNode("button", null, "Submit", -1/* HOISTED */ );
+function render(_ctx, _cache) {
+    const _component_Field = _vue.resolveComponent("Field");
+    const _component_ErrorMessage = _vue.resolveComponent("ErrorMessage");
+    const _component_Form = _vue.resolveComponent("Form");
+    return _vue.openBlock(), _vue.createBlock(_component_Form, {
+        onSubmit: _ctx.submit,
+        "validation-schema": _ctx.simpleSchema
+    }, {
+        default: _vue.withCtx(()=>[
+                _vue.createVNode(_component_Field, {
+                    name: "email"
+                }),
+                _vue.createVNode(_component_ErrorMessage, {
+                    name: "email"
+                }),
+                _vue.createVNode(_component_Field, {
+                    name: "password",
+                    type: "password"
+                }),
+                _vue.createVNode(_component_ErrorMessage, {
+                    name: "password"
+                }),
+                _hoisted_1
+            ]
+        ),
+        _: 1
+    }, 8/* PROPS */ , [
+        "onSubmit",
+        "validation-schema"
+    ]);
+}
+if (module.hot) module.hot.accept(()=>{
+    __VUE_HMR_RUNTIME__.rerender('1e4748-hmr', render);
+});

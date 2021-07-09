@@ -1,0 +1,95 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _movies = require("../data/movies");
+var _moviesDefault = parcelHelpers.interopDefault(_movies);
+const state1 = ()=>({
+        count: 0,
+        movie: localStorage.getItem('movie'),
+        movies: localStorage.getItem('movies'),
+        moviesbycategory: [],
+        categories: localStorage.getItem('categories'),
+        checkoutstatus: null
+    })
+;
+const mutations = {
+    increment (state) {
+        state.count++;
+    },
+    setMovies (state, movies) {
+        state.movies = movies;
+    },
+    setMovie (state, movie) {
+        state.movie = movie;
+    },
+    setMoviesbyCategory (state, movies) {
+        state.movies = movies;
+    },
+    setCategories (state, categories) {
+        state.categories = categories;
+    }
+};
+const actions = {
+    inc ({ commit  }) {
+        commit('increment');
+    },
+    getAllMovies ({ commit  }) {
+        _moviesDefault.default.getMovies((movies)=>{
+            localStorage.setItem('movies', movies);
+            commit('setMovies', movies);
+        });
+    },
+    getMoviebyId ({ commit , state  }, id) {
+        const movies = [
+            ...state.movies
+        ];
+        let movie = {
+        };
+        for(item in movies)if (item.id == id) movie = movies[i];
+        localStorage.setItem('movies', movie);
+        commit('setMovie', movie);
+    },
+    getAllMoviesbyCategory ({ commit , state  }, category) {
+        const movies = [
+            ...state.movies
+        ];
+        console.log(movies);
+        let moviesbycategory = [];
+        for(let i = 0; i < movies.length; i++){
+            console.log(movies[i]);
+            if (movies[i].category.length > 1) {
+                categories = movies[i].category;
+                for(let j = 0; j < categories.length; j++)if (categories[j].name == category) moviesbycategory.push(movies[i]);
+            } else if (movies[i].category.name == category) moviesbycategory.push(movies[i]);
+        }
+        commit('setMoviesbyCategory');
+    },
+    getAllCategories ({ commit  }) {
+        _moviesDefault.default.getCategories((categories)=>{
+            localStorage.setItem('categories', categories);
+            commit('setCategories', categories);
+        });
+    }
+};
+const getters = {
+    getInc: (state2)=>{
+        return state2.count;
+    },
+    getMovies: (state2)=>{
+        return state2.movies;
+    },
+    getMoviesbyCategory: (state2)=>{
+        return state2.moviesbycategory;
+    },
+    getMovie: (state2)=>{
+        return state2.movie;
+    },
+    getCategories: (state2)=>{
+        return state2.categories;
+    }
+};
+exports.default = {
+    state: state1,
+    getters,
+    actions,
+    mutations
+};

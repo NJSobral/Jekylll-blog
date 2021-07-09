@@ -1,0 +1,57 @@
+import { createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createBlock as _createBlock, toDisplayString as _toDisplayString, resolveComponent as _resolveComponent, withCtx as _withCtx } from "vue"
+
+const _hoisted_1 = /*#__PURE__*/_createVNode("h1", null, "Shop", -1 /* HOISTED */)
+const _hoisted_2 = { class: "grid-container" }
+const _hoisted_3 = /*#__PURE__*/_createVNode("div", { class: "card-header" }, null, -1 /* HOISTED */)
+const _hoisted_4 = { class: "card-content" }
+const _hoisted_5 = { class: "list-item" }
+
+export function render(_ctx, _cache) {
+  const _component_router_link = _resolveComponent("router-link")
+
+  return (_openBlock(), _createBlock("div", null, [
+    _hoisted_1,
+    _createVNode("ul", _hoisted_2, [
+      (_openBlock(true), _createBlock(_Fragment, null, _renderList(_ctx.getMovies, (movie) => {
+        return (_openBlock(), _createBlock("div", {
+          class: "card",
+          key: movie.id
+        }, [
+          _hoisted_3,
+          _createVNode("div", _hoisted_4, [
+            _createVNode(_component_router_link, {
+              to: {name:'movie', params:{id:movie.id}}
+            }, {
+              default: _withCtx(() => [
+                _createVNode("h4", null, _toDisplayString(movie.title), 1 /* TEXT */)
+              ]),
+              _: 2 /* DYNAMIC */
+            }, 1032 /* PROPS, DYNAMIC_SLOTS */, ["to"])
+          ]),
+          (_openBlock(true), _createBlock(_Fragment, null, _renderList(movie.category, (category) => {
+            return (_openBlock(), _createBlock("ul", {
+              class: "list-inline",
+              key: category.id
+            }, [
+              _createVNode(_component_router_link, {
+                to: {name:'category', params:{id:category.name}}
+              }, {
+                default: _withCtx(() => [
+                  _createVNode("li", _hoisted_5, [
+                    _createVNode("h6", null, _toDisplayString(category.name), 1 /* TEXT */)
+                  ])
+                ]),
+                _: 2 /* DYNAMIC */
+              }, 1032 /* PROPS, DYNAMIC_SLOTS */, ["to"])
+            ]))
+          }), 128 /* KEYED_FRAGMENT */))
+        ]))
+      }), 128 /* KEYED_FRAGMENT */))
+    ])
+  ]))
+}
+if (module.hot) {
+  module.hot.accept(() => {
+    __VUE_HMR_RUNTIME__.rerender('130d12-hmr', render);
+  })
+}

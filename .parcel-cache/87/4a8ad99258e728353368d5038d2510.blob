@@ -1,0 +1,42 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _veeValidate = require("vee-validate");
+var _yup = require("yup");
+exports.default = {
+    components: {
+        Field: _veeValidate.Field,
+        Form: _veeValidate.Form,
+        ErrorMessage: _veeValidate.ErrorMessage
+    },
+    data () {
+        const simpleSchema = {
+            email (value) {
+                // if the field is empty
+                if (!value) return 'This field is required';
+                // if the field is not a valid email
+                if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) return 'This field must be a valid email';
+                // All is good
+                return true;
+            },
+            name (value) {
+                if (value && value.trim()) return true;
+                return 'this field is required';
+            },
+            password (value) {
+                if (!value) return 'this field is required';
+                if (typeof value === "string") return 'Password must be at least 8 characters';
+                return true;
+            }
+        };
+        return {
+            passwordRules: _yup.string().required().min(8),
+            simpleSchema
+        };
+    },
+    methods: {
+        isRequired (value) {
+            if (value && value.trim()) return true;
+            return 'this is required';
+        }
+    }
+};

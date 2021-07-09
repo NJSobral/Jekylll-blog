@@ -1,0 +1,22 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+// import {createRouter} from 'vue-router';
+var _categoryVue = require("../components/category.vue");
+var _categoryVueDefault = parcelHelpers.interopDefault(_categoryVue);
+var _moviesVue = require("../components/movies.vue");
+var _moviesVueDefault = parcelHelpers.interopDefault(_moviesVue);
+const routes = [
+    {
+        path: '/category/:name/',
+        component: _categoryVueDefault.default
+    },
+    {
+        path: '/movies/:id/',
+        component: _moviesVueDefault.default
+    }, 
+];
+const router = VueRouter.createRouter({
+    history: VueRouter.createWebHashHistory(),
+    routes
+});
+exports.default = router;

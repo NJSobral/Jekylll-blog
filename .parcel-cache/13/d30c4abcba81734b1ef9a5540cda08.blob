@@ -1,0 +1,5 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _veeValidate = require("vee-validate");
+exports.default = {
+};

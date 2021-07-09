@@ -1,0 +1,31 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _vuex = require("vuex");
+exports.default = {
+    props: [
+        'id'
+    ],
+    data () {
+        return {
+            movie: null
+        };
+    },
+    methods: {
+        ..._vuex.mapActions([
+            "getAllMovies",
+            "getMoviebyId"
+        ]),
+        getData () {
+            this.getAllMovies();
+            this.getMoviebyId(this.id);
+        }
+    },
+    computed: {
+        ..._vuex.mapGetters([
+            "getMovie"
+        ])
+    },
+    created () {
+        this.getData();
+    }
+};

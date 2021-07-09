@@ -1,0 +1,19 @@
+
+import { Field, Form, ErrorMessage } from 'vee-validate';
+export default {
+    components: {
+        Field,
+        Form,
+        ErrorMessage
+    },
+    methods:{
+        isRequired(value){
+            if(value && value.trim())
+            return value ? true : 'This field is required';
+        },
+        onSubmit(values) {
+            alert(JSON.stringify(values,null,2))
+        }
+    }
+
+}

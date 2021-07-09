@@ -1,0 +1,24 @@
+
+import { Field, Form, ErrorMessage } from 'vee-validate';
+import * as yup from 'yup';
+export default {
+    components: {
+        Field,
+        Form,
+        ErrorMessage
+    },
+    data(){
+
+    }
+,    methods:{
+        isRequired(value){
+            if(value && value.trim())
+                return true;
+            return 'this is required';
+        },
+        onSubmit(values) {
+            alert(JSON.stringify(values,null,2))
+        }
+    }
+
+}

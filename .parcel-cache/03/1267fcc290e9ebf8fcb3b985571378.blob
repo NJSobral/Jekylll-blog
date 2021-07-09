@@ -1,0 +1,23 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _vuex = require("vuex");
+exports.default = {
+    data () {
+        return {
+            count: 0
+        };
+    },
+    methods: {
+        ..._vuex.mapActions([
+            'inc', 
+        ]),
+        increment2 () {
+            this.inc();
+        }
+    },
+    computed: {
+        ..._vuex.mapGetters([
+            'getInc', 
+        ])
+    }
+};

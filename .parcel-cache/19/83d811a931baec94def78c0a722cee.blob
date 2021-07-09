@@ -1,0 +1,38 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _vuex = require("vuex");
+exports.default = {
+    props: [
+        'category'
+    ],
+    data () {
+        return {
+            movies: []
+        };
+    },
+    methods: {
+        ..._vuex.mapActions([
+            "getAllMovies",
+            "getAllCategories",
+            "getAllMoviesbyCategory"
+        ]),
+        getData () {
+            this.getAllMovies();
+            this.getAllCategories();
+        },
+        showMovies (evt) {
+            this.getAllMoviesbyCategory(this.category);
+            this.movies = this.getMoviesbyCategory;
+        }
+    },
+    computed: {
+        ..._vuex.mapGetters([
+            "getMovies",
+            "getMoviesbyCategory",
+            "getCategories"
+        ])
+    },
+    created () {
+        this.getData();
+    }
+};

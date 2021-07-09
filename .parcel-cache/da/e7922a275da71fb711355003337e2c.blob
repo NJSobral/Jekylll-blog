@@ -1,0 +1,33 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _vueRouter = require("vue-router");
+var _plpVue = require("../components/plp.vue");
+var _plpVueDefault = parcelHelpers.interopDefault(_plpVue);
+var _pdpVue = require("../components/pdp.vue");
+var _pdpVueDefault = parcelHelpers.interopDefault(_pdpVue);
+var _shopVue = require("../shop.vue");
+var _shopVueDefault = parcelHelpers.interopDefault(_shopVue);
+const routes = [
+    {
+        path: '/shop',
+        name: 'shop',
+        component: plp,
+        children: [
+            {
+                path: 'category/',
+                name: 'category',
+                component: plp
+            },
+            {
+                path: 'movie/:id/',
+                name: 'movie',
+                component: pdp
+            }, 
+        ]
+    }
+];
+const router = _vueRouter.createRouter({
+    history: _vueRouter.createWebHistory(),
+    routes
+});
+exports.default = router;

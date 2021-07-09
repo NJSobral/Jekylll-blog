@@ -1,0 +1,37 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "render", ()=>render
+);
+var _vue = require("vue");
+const _hoisted_1 = {
+    class: "wrapper"
+};
+const _hoisted_2 = {
+    class: "container"
+};
+const _hoisted_3 = /*#__PURE__*/ _vue.createVNode("h3", null, "Categories:", -1/* HOISTED */ );
+const _hoisted_4 = {
+    class: "lis-item"
+};
+function render(_ctx, _cache) {
+    return _vue.openBlock(), _vue.createBlock("div", _hoisted_1, [
+        _vue.createVNode("h1", null, "PDP -> Product detail page " + _vue.toDisplayString(_ctx.id), 1/* TEXT */ ),
+        _vue.createVNode("div", _hoisted_2, [
+            _vue.createVNode("h2", null, _vue.toDisplayString(_ctx.getMovie.title), 1/* TEXT */ ),
+            _hoisted_3,
+            (_vue.openBlock(true), _vue.createBlock(_vue.Fragment, null, _vue.renderList(_ctx.getMovie.category, (category)=>{
+                return _vue.openBlock(), _vue.createBlock("ul", {
+                    class: "list squared mx-4 my-1",
+                    key: category.id
+                }, [
+                    _vue.createVNode("li", _hoisted_4, [
+                        _vue.createVNode("h6", null, _vue.toDisplayString(category.name), 1/* TEXT */ )
+                    ])
+                ]);
+            }), 128/* KEYED_FRAGMENT */ ))
+        ])
+    ]);
+}
+if (module.hot) module.hot.accept(()=>{
+    __VUE_HMR_RUNTIME__.rerender('c0e18b-hmr', render);
+});

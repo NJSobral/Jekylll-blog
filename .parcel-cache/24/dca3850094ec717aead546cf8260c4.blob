@@ -1,0 +1,12 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "render", ()=>render
+);
+var _vue = require("vue");
+function render(_ctx, _cache) {
+    const _component_router_view = _vue.resolveComponent("router-view");
+    return _vue.openBlock(), _vue.createBlock(_component_router_view);
+}
+if (module.hot) module.hot.accept(()=>{
+    __VUE_HMR_RUNTIME__.rerender('130d12-hmr', render);
+});

@@ -1,0 +1,45 @@
+import { createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createBlock as _createBlock, toDisplayString as _toDisplayString } from "vue"
+
+const _hoisted_1 = /*#__PURE__*/_createVNode("h1", null, "Shop", -1 /* HOISTED */)
+const _hoisted_2 = /*#__PURE__*/_createVNode("div", { class: "container" }, [
+  /*#__PURE__*/_createVNode("button", null, " Category ")
+], -1 /* HOISTED */)
+const _hoisted_3 = { class: "grid-container" }
+const _hoisted_4 = /*#__PURE__*/_createVNode("div", { class: "card-header" }, null, -1 /* HOISTED */)
+const _hoisted_5 = { class: "card-content" }
+const _hoisted_6 = { class: "list-item" }
+
+export function render(_ctx, _cache) {
+  return (_openBlock(), _createBlock("div", null, [
+    _hoisted_1,
+    _hoisted_2,
+    _createVNode("ul", _hoisted_3, [
+      (_openBlock(true), _createBlock(_Fragment, null, _renderList(_ctx.getMovies, (movie) => {
+        return (_openBlock(), _createBlock("div", {
+          class: "card",
+          key: movie.id
+        }, [
+          _hoisted_4,
+          _createVNode("div", _hoisted_5, [
+            _createVNode("h4", null, _toDisplayString(movie.title), 1 /* TEXT */)
+          ]),
+          (_openBlock(true), _createBlock(_Fragment, null, _renderList(movie, (category) => {
+            return (_openBlock(), _createBlock("ul", {
+              class: "list-inline",
+              key: category.id
+            }, [
+              _createVNode("li", _hoisted_6, [
+                _createVNode("h6", null, _toDisplayString(category.name), 1 /* TEXT */)
+              ])
+            ]))
+          }), 128 /* KEYED_FRAGMENT */))
+        ]))
+      }), 128 /* KEYED_FRAGMENT */))
+    ])
+  ]))
+}
+if (module.hot) {
+  module.hot.accept(() => {
+    __VUE_HMR_RUNTIME__.rerender('130d12-hmr', render);
+  })
+}

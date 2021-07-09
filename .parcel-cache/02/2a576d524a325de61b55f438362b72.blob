@@ -1,0 +1,90 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "render", ()=>render
+);
+var _vue = require("vue");
+const _hoisted_1 = /*#__PURE__*/ _vue.createVNode("h1", null, "PLP -> Product listing page", -1/* HOISTED */ );
+const _hoisted_2 = {
+    class: "container ",
+    style: {
+        "margin": "auto"
+    }
+};
+const _hoisted_3 = {
+    class: "nav-item mx-3"
+};
+const _hoisted_4 = {
+    class: "grid-container"
+};
+const _hoisted_5 = /*#__PURE__*/ _vue.createVNode("div", {
+    class: "card-header"
+}, null, -1/* HOISTED */ );
+const _hoisted_6 = {
+    class: "card-content"
+};
+function render(_ctx, _cache) {
+    const _component_router_link = _vue.resolveComponent("router-link");
+    return _vue.openBlock(), _vue.createBlock("div", null, [
+        _hoisted_1,
+        _vue.createVNode("div", _hoisted_2, [
+            (_vue.openBlock(true), _vue.createBlock(_vue.Fragment, null, _vue.renderList(_ctx.getCategories, (category)=>{
+                return _vue.openBlock(), _vue.createBlock("ul", {
+                    class: "nav justify-content-center my-5",
+                    style: {
+                        "display": "inline-block"
+                    },
+                    key: category.id
+                }, [
+                    _vue.createVNode(_component_router_link, {
+                        to: {
+                            name: 'category',
+                            params: {
+                                name: category.name
+                            }
+                        }
+                    }, {
+                        default: _vue.withCtx(()=>[
+                                _vue.createVNode("li", _hoisted_3, _vue.toDisplayString(category.name), 1/* TEXT */ )
+                            ]
+                        ),
+                        _: 2
+                    }, 1032/* PROPS, DYNAMIC_SLOTS */ , [
+                        "to"
+                    ]),
+                    _vue.createCommentVNode(" <li class=\"nav-item\">\n          <a class=\"nav-link\" href=\"#\">Link</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" href=\"#\">Link</a>\n        </li> ")
+                ]);
+            }), 128/* KEYED_FRAGMENT */ ))
+        ]),
+        _vue.createVNode("div", _hoisted_4, [
+            (_vue.openBlock(true), _vue.createBlock(_vue.Fragment, null, _vue.renderList(_ctx.getMovies, (movie)=>{
+                return _vue.openBlock(), _vue.createBlock("div", {
+                    class: "card",
+                    key: movie.id
+                }, [
+                    _hoisted_5,
+                    _vue.createVNode("div", _hoisted_6, [
+                        _vue.createVNode(_component_router_link, {
+                            to: {
+                                name: 'movie',
+                                params: {
+                                    id: movie.id
+                                }
+                            }
+                        }, {
+                            default: _vue.withCtx(()=>[
+                                    _vue.createVNode("h4", null, _vue.toDisplayString(movie.title), 1/* TEXT */ )
+                                ]
+                            ),
+                            _: 2
+                        }, 1032/* PROPS, DYNAMIC_SLOTS */ , [
+                            "to"
+                        ])
+                    ])
+                ]);
+            }), 128/* KEYED_FRAGMENT */ ))
+        ])
+    ]);
+}
+if (module.hot) module.hot.accept(()=>{
+    __VUE_HMR_RUNTIME__.rerender('5e6e85-hmr', render);
+});

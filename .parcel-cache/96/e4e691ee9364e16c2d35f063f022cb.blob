@@ -1,0 +1,41 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "render", ()=>render
+);
+var _vue = require("vue");
+const _withId = /*#__PURE__*/ _vue.withScopeId("data-v-1e4748");
+_vue.pushScopeId("data-v-1e4748");
+const _hoisted_1 = {
+    class: "wrapper"
+};
+const _hoisted_2 = /*#__PURE__*/ _vue.createVNode("h1", {
+    class: "batta"
+}, " Sign up form ", -1/* HOISTED */ );
+const _hoisted_3 = /*#__PURE__*/ _vue.createVNode("br", null, null, -1/* HOISTED */ );
+_vue.popScopeId();
+const render = /*#__PURE__*/ _withId((_ctx, _cache)=>{
+    const _component_Field = _vue.resolveComponent("Field");
+    const _component_Form = _vue.resolveComponent("Form");
+    return _vue.openBlock(), _vue.createBlock("div", _hoisted_1, [
+        _hoisted_2,
+        _vue.createVNode(_component_Form, {
+            class: "form mt-5"
+        }, {
+            default: _withId(({ errors  })=>[
+                    _vue.createVNode(_component_Field, {
+                        name: "field",
+                        rules: _ctx.isRequired
+                    }, null, 8/* PROPS */ , [
+                        "rules"
+                    ]),
+                    _hoisted_3,
+                    _vue.createVNode("span", null, _vue.toDisplayString(errors.field), 1/* TEXT */ )
+                ]
+            ),
+            _: 1
+        })
+    ]);
+});
+if (module.hot) module.hot.accept(()=>{
+    __VUE_HMR_RUNTIME__.rerender('1e4748-hmr', render);
+});

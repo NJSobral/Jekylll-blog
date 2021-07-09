@@ -1,0 +1,24 @@
+
+import { mapActions, mapGetters } from 'vuex';
+  export default {
+    data() {
+      return {
+        count: 0 ,
+      };
+    },
+    methods:{
+      ...mapActions([
+        'inc',
+        'getAllMovies'
+
+      ]),
+      increment2() {
+        this.inc()
+      }
+    },
+    computed:{
+      ...mapGetters([
+        'getInc',
+      ])
+    }
+  };

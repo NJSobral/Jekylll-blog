@@ -1,0 +1,51 @@
+
+import { Field, Form, ErrorMessage } from 'vee-validate';
+import * as yup from 'yup';
+export default {
+    components: {
+        Field,
+        Form,
+        ErrorMessage
+    },
+    data(){
+        const simpleSchema = {
+            email(value) {
+                // if the field is empty
+                if (!value) {
+                    return 'This field is required';
+                }
+
+                // if the field is not a valid email
+                if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
+                    return 'This field must be a valid email';
+                }
+
+                // All is good
+                return true;
+                
+            },
+            name(value) {
+                if(value && value.trim())
+                    return true;
+                return 'this is required';
+            },
+            // If you defined global rules you can also use them
+            // password: 'required|min:8'
+        };
+        return{ 
+            // passwordRules: yup.string().required().min(8),
+            simpleSchema
+        };
+    },
+    methods:{
+        isRequired(value){
+            if(value && value.trim())
+                return true;
+            return 'this is required';
+        },
+        onSubmit(values) {
+            alert(JSON.stringify(values,null,2))
+        }
+    }
+
+}

@@ -1,0 +1,31 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+// Create a new store instance.
+const state1 = ()=>({
+        count: 0,
+        item: [],
+        checkoutstatus: null
+    })
+;
+const mutations = {
+    increment (state) {
+        state.count++;
+    }
+};
+const actions = {
+    inc ({ commit  }) {
+        commit('increment');
+    }
+};
+const getters = {
+    getInc: (state2)=>{
+        return state2.count;
+    }
+};
+exports.default = {
+    namesapce: true,
+    state: state1,
+    getters,
+    actions,
+    mutations
+};

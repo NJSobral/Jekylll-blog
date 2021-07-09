@@ -1,0 +1,27 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "render", ()=>render
+);
+var _vue = require("vue");
+const _hoisted_1 = {
+    class: "wrapper"
+};
+const _hoisted_2 = /*#__PURE__*/ _vue.createVNode("button", {
+    type: "button"
+}, "show", -1/* HOISTED */ );
+const _hoisted_3 = {
+    class: "container"
+};
+function render(_ctx, _cache) {
+    return _vue.openBlock(), _vue.createBlock("div", _hoisted_1, [
+        _vue.createVNode("h1", null, "PDP -> Product detail page " + _vue.toDisplayString(_ctx.id), 1/* TEXT */ ),
+        _hoisted_2,
+        _vue.createVNode("div", _hoisted_3, [
+            _vue.createVNode("h2", null, _vue.toDisplayString(_ctx.currentMovie.title), 1/* TEXT */ ),
+            _vue.createCommentVNode(" <h3>Categories:</h3>\n      <ul class=\"list squared mx-4 my-1\" v-for=\"category in currentMovie.category\" :key=\"category.id\">\n        <li class=\"lis-item\">\n            <h6> {{category.name}}</h6>\n        </li>   \n      </ul>")
+        ])
+    ]);
+}
+if (module.hot) module.hot.accept(()=>{
+    __VUE_HMR_RUNTIME__.rerender('c0e18b-hmr', render);
+});

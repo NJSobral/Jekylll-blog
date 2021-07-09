@@ -1,0 +1,6 @@
+
+let NOOP = () => {};
+
+export default script => {
+  
+}

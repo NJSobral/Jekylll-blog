@@ -1,4 +1,0 @@
----
-layout: vuedefault
-permalink: /vueshop/
----

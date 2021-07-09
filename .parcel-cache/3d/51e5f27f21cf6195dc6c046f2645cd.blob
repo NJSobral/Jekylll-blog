@@ -1,0 +1,29 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "render", ()=>render
+);
+var _vue = require("vue");
+const _hoisted_1 = /*#__PURE__*/ _vue.createVNode("h1", null, "Shop", -1/* HOISTED */ );
+const _hoisted_2 = /*#__PURE__*/ _vue.createVNode("div", {
+    class: "container"
+}, [
+    /*#__PURE__*/ _vue.createVNode("button", null, " Category ")
+], -1/* HOISTED */ );
+function render(_ctx, _cache) {
+    return _vue.openBlock(), _vue.createBlock("div", null, [
+        _hoisted_1,
+        _hoisted_2,
+        _vue.createVNode("ul", null, [
+            (_vue.openBlock(true), _vue.createBlock(_vue.Fragment, null, _vue.renderList(_ctx.getMovies, (movie)=>{
+                return _vue.openBlock(), _vue.createBlock("li", {
+                    key: movie.id
+                }, [
+                    _vue.createVNode("h4", null, _vue.toDisplayString(movie.title), 1/* TEXT */ )
+                ]);
+            }), 128/* KEYED_FRAGMENT */ ))
+        ])
+    ]);
+}
+if (module.hot) module.hot.accept(()=>{
+    __VUE_HMR_RUNTIME__.rerender('130d12-hmr', render);
+});

@@ -1,0 +1,25 @@
+import { createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createBlock as _createBlock, toDisplayString as _toDisplayString } from "vue"
+
+const _hoisted_1 = /*#__PURE__*/_createVNode("h1", null, "Shop", -1 /* HOISTED */)
+const _hoisted_2 = /*#__PURE__*/_createVNode("div", { class: "container" }, null, -1 /* HOISTED */)
+
+export function render(_ctx, _cache) {
+  return (_openBlock(), _createBlock("div", null, [
+    _hoisted_1,
+    _hoisted_2,
+    _createVNode("ul", null, [
+      (_openBlock(true), _createBlock(_Fragment, null, _renderList(_ctx.getMovies, (movie) => {
+        return (_openBlock(), _createBlock("li", {
+          key: movie.id
+        }, [
+          _createVNode("h4", null, _toDisplayString(movie.title), 1 /* TEXT */)
+        ]))
+      }), 128 /* KEYED_FRAGMENT */))
+    ])
+  ]))
+}
+if (module.hot) {
+  module.hot.accept(() => {
+    __VUE_HMR_RUNTIME__.rerender('130d12-hmr', render);
+  })
+}

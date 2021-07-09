@@ -1,0 +1,89 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _movies = require("../data/movies");
+var _moviesDefault = parcelHelpers.interopDefault(_movies);
+const state1 = ()=>({
+        count: 0,
+        movies: [
+            {
+                'id': 1,
+                'title': 'Pirates of the Caribbean',
+                'category': 'Fantasy',
+                'price': 10.01,
+                'inventory': 2
+            },
+            {
+                'id': 2,
+                'title': 'Harry Potter',
+                'category': 'Fantasy',
+                'price': 10.99,
+                'inventory': 10
+            },
+            {
+                'id': 3,
+                'title': 'Lord of he Rings',
+                'category': 'Fantasy',
+                'price': 19.99,
+                'inventory': 5
+            },
+            {
+                'id': 4,
+                'title': 'Star Wars',
+                'category': 'Sci-fi',
+                'price': 19.99,
+                'inventory': 5
+            },
+            {
+                'id': 5,
+                'title': 'Alien vs Predator',
+                'category': 'Sci-fi',
+                'price': 19.99,
+                'inventory': 5
+            },
+            {
+                'id': 6,
+                'title': 'Saw',
+                'category': 'Horror',
+                'price': 19.99,
+                'inventory': 5
+            },
+            {
+                'id': 5,
+                'title': 'American Psycho',
+                'category': 'Horror',
+                'price': 19.99,
+                'inventory': 5
+            }
+        ],
+        checkoutstatus: null
+    })
+;
+const mutations = {
+    increment (state) {
+        state.count++;
+    },
+    setMovies (state, movies) {
+        state.movies = movies;
+    }
+};
+const actions = {
+    inc ({ commit  }) {
+        commit('increment');
+    },
+    getAllMovies ({ commit  }) {
+        _moviesDefault.default.getProducts((movies)=>{
+            commit('setMovies', movies);
+        });
+    }
+};
+const getters = {
+    getInc: (state2)=>{
+        return state2.count;
+    }
+};
+exports.default = {
+    state: state1,
+    getters,
+    actions,
+    mutations
+};

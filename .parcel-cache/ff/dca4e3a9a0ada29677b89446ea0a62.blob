@@ -1,0 +1,34 @@
+
+import { mapActions, mapGetters } from "vuex";
+export default {
+  props: {
+    category:{
+      type: String,
+      required: false,
+      default: 'All'
+    }
+  },
+  methods: {
+    ...mapActions([
+      "getAllMovies",
+      "getAllCategories",
+    ]),
+    getData() {
+      this.getAllMovies();
+      this.getAllCategories();
+    },
+  },
+  computed: {
+    ...mapGetters(["getMovies", "getMoviesbyCategory", "getCategories"]),
+    visiblemovies(){
+      if (this.category === "All"){
+        return this.getMovies;
+      }
+
+      return this.getMoviesbyCategory(this.category);
+    }
+  },
+  created() {
+    this.getData();
+  },
+};

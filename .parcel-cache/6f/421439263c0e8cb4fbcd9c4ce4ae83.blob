@@ -1,0 +1,31 @@
+import { toDisplayString as _toDisplayString, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createBlock as _createBlock } from "vue"
+
+const _hoisted_1 = { class: "wrapper" }
+const _hoisted_2 = { class: "container" }
+const _hoisted_3 = /*#__PURE__*/_createVNode("h3", null, "Categories:", -1 /* HOISTED */)
+const _hoisted_4 = { class: "lis-item" }
+
+export function render(_ctx, _cache) {
+  return (_openBlock(), _createBlock("div", _hoisted_1, [
+    _createVNode("h1", null, "PDP -> Product detail page " + _toDisplayString(_ctx.id), 1 /* TEXT */),
+    _createVNode("div", _hoisted_2, [
+      _createVNode("h2", null, _toDisplayString(_ctx.currentMovie.title), 1 /* TEXT */),
+      _hoisted_3,
+      (_openBlock(true), _createBlock(_Fragment, null, _renderList(_ctx.currentMovie.category, (category) => {
+        return (_openBlock(), _createBlock("ul", {
+          class: "list squared mx-4 my-1",
+          key: category.id
+        }, [
+          _createVNode("li", _hoisted_4, [
+            _createVNode("h6", null, _toDisplayString(category.name), 1 /* TEXT */)
+          ])
+        ]))
+      }), 128 /* KEYED_FRAGMENT */))
+    ])
+  ]))
+}
+if (module.hot) {
+  module.hot.accept(() => {
+    __VUE_HMR_RUNTIME__.rerender('c0e18b-hmr', render);
+  })
+}

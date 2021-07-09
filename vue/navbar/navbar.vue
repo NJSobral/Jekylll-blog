@@ -10,10 +10,13 @@
             <a class="nav-link" href="/about/"><h5>About</h5></a>
           </li>
           <li class="nav-item">
-            <a href="/vueshop/" class="nav-link"><h5>Vue Shop</h5></a>
+            <a href="/shop/" class="nav-link"><h5>Shop</h5></a>
+          </li>
+          <li class="nav-item">
+            <a href="/signup/" class="nav-link">Sign Up</a>
           </li>
         </ul>
-        <button class="button button5" ><i class="fa fa-shopping-cart fa-2x icon-grey"></i><span>{{getInc}}</span></button>
+        <button class="button" ><i class="fa fa-shopping-cart fa-2x icon-grey"></i><span>{{getInc}}</span></button>
       </div>
     </nav>
     

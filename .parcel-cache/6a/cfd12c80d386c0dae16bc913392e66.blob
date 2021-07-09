@@ -1,0 +1,13 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _vuex = require("vuex");
+var _navbarstore = require("./modules/navbarstore");
+var _navbarstoreDefault = parcelHelpers.interopDefault(_navbarstore);
+var _shopstore = require("./modules/shopstore");
+var _shopstoreDefault = parcelHelpers.interopDefault(_shopstore);
+exports.default = new Vuex.Store({
+    modules: {
+        navbarstore: _navbarstoreDefault.default,
+        shopstore: _shopstoreDefault.default
+    }
+});

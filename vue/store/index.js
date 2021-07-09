@@ -1,6 +1,6 @@
-import Vuex from 'vuex'
-import cart from './modules/navbarstore'
-import products from './modules/shopstore'
+import { createStore } from 'vuex'
+import navbarstore from './modules/navbarstore'
+import shopstore from './modules/shopstore'
 
 // Create a new store instance.
 // const store = createStore({
@@ -25,10 +25,11 @@ import products from './modules/shopstore'
 //   })
 
 
-export default new Vuex.Store({
+const store = createStore({
   modules: {
     navbarstore,
     shopstore
   }
 });
-  
+
+export default store;

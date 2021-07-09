@@ -1,0 +1,9 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _vue = require("vue");
+var _navbarVue = require("./navbar.vue");
+var _navbarVueDefault = parcelHelpers.interopDefault(_navbarVue);
+var _indexJs = require("../store/index.js");
+var _indexJsDefault = parcelHelpers.interopDefault(_indexJs);
+const app = _vue.createApp(_navbarVueDefault.default);
+app.use(_indexJsDefault.default);
+app.mount("#signup");

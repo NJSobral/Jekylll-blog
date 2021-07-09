@@ -1,0 +1,15 @@
+import { createVNode as _createVNode, createCommentVNode as _createCommentVNode, openBlock as _openBlock, createBlock as _createBlock } from "vue"
+
+const _hoisted_1 = /*#__PURE__*/_createVNode("h1", null, "Shop", -1 /* HOISTED */)
+
+export function render(_ctx, _cache) {
+  return (_openBlock(), _createBlock("div", null, [
+    _hoisted_1,
+    _createCommentVNode(" <button type=\"button\" @click=\"increment2\">Increment</button>    \n    <h3 style=\"color:black;\">Counter is: {{getInc}}</h3> ")
+  ]))
+}
+if (module.hot) {
+  module.hot.accept(() => {
+    __VUE_HMR_RUNTIME__.rerender('130d12-hmr', render);
+  })
+}

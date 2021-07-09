@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel ./vue/navbar.html ./vue/shop.html ./vue/basket.html"
+    "start": "parcel ./vue/navbar.html ./vue/shop.html ./vue/basket.html ./vue/signup.html"
   },
   "repository": {
     "type": "git",
@@ -20,10 +20,13 @@
   "homepage": "https://github.com/NJSobral/Jekylll-blog#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
+    "vee-validate": "^4.4.4",
     "vue": "^3.1.1",
     "vue-loader": "^16.2.0",
+    "vue-router": "^4.0.8",
     "vuetify": "^3.0.0-alpha.5",
-    "vuex": "^4.0.1"
+    "vuex": "^4.0.1",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "@parcel/transformer-vue": "^2.0.0-beta.3.1",

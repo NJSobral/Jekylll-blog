@@ -1,0 +1,12 @@
+import { resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock } from "vue"
+
+export function render(_ctx, _cache) {
+  const _component_router_view = _resolveComponent("router-view")
+
+  return (_openBlock(), _createBlock(_component_router_view))
+}
+if (module.hot) {
+  module.hot.accept(() => {
+    __VUE_HMR_RUNTIME__.rerender('130d12-hmr', render);
+  })
+}

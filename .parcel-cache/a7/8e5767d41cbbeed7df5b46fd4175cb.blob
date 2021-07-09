@@ -1,0 +1,14 @@
+import { createVNode as _createVNode, openBlock as _openBlock, createBlock as _createBlock } from "vue"
+
+const _hoisted_1 = /*#__PURE__*/_createVNode("h1", null, "PDP -> Product detail page", -1 /* HOISTED */)
+
+export function render(_ctx, _cache) {
+  return (_openBlock(), _createBlock("div", null, [
+    _hoisted_1
+  ]))
+}
+if (module.hot) {
+  module.hot.accept(() => {
+    __VUE_HMR_RUNTIME__.rerender('c0e18b-hmr', render);
+  })
+}
